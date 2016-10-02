@@ -27,7 +27,7 @@ $box-width: 290px;
 html, body {
     font-family: 'consolas', "microsoft yahei", "arial, helvetica, sans-serif";
     min-height: 700px;
-    height: 100%;
+    height: calc(100% - 20px);
     width: auto;
     margin: 0;
     padding: 0;
@@ -430,7 +430,7 @@ button {
 .footer {
     position: absolute;
     left: 0; right: 0;
-    bottom: 60px;
+    bottom: 50px;
     margin: auto;
     width: 100%;
     line-height: 24px;
