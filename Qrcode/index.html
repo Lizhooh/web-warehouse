@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--author: lizhooh-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Web二维码</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script src="js/lib/require.min.js" data-main="js/app.js"></script>
+</head>
+<body>
+
+    <div class="main">
+        <header class="header">
+            <div class="title">Web二维码</div>
+        </header>
+        <section class="app">
+
+            <div class="tab" id="create">
+                <div class="title">二维码内容</div>
+                <textarea id='content' class="content" placeholder="输入二维码内容（最多100字）" maxlength="100"></textarea>
+                <div class="color">
+                    <span class="red"></span>
+                    <span class="blue"></span>
+                    <span class="black"></span>
+                    <span class="green"></span>
+                    <span class="yellow"></span>
+                </div>
+                <div class="msg">生成二维码（未生成）</div>
+                <div class="code">
+                    <div id="qrcode"></div>
+                </div>
+            </div>
+
+            <div class="tab" id="sweep">
+                <div class="qr-btn" node-type="qr-btn">扫描二维码
+                    <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码" hidden="hidden" />
+                </div>
+                <div class="msg">扫码结果</div>
+                <div class="result-qrcode">
+                </div>
+            </div>
+
+            <!-- tool -->
+            <div class="tabs-title">
+                <div class="tab-title create">
+                    <a href="#create">生成二维码</a>
+                </div>
+                <div class="tab-title sweep">
+                    <a href="#sweep">扫码二维码</a>
+                </div>
+                <span class="line"></span>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        window.location.hash = '#create';
+    </script>
+</body>
+</html>

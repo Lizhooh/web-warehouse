@@ -1,0 +1,477 @@
+
+@mixin transform($value...) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+
+@mixin transition($value...) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin box-shadow($value...) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+$content-width: 300px;
+$box-width: 290px;
+
+html, body {
+    font-family: 'consolas', "microsoft yahei", "arial, helvetica, sans-serif";
+    min-height: 700px;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+//  overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #00ACED;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FF6600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+div {
+    font-family: inherit;
+}
+
+input[type=text], input[type=password], button{
+    font-family: inherit;
+    display: block;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 17px 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+input[type=text], input[type=password] {
+    &:first-of-type{
+        border-radius: 3px 3px 0 0;
+        border-top: 1px solid #ddd !important;
+    }
+    &:last-of-type{
+        border-radius: 0 0 3px 3px;
+    }
+}
+
+button {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 15px auto;
+    max-width: $box-width;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 3px;
+
+    &.light {
+        background-color: white;
+        color: dodgerblue;
+        border: 1px solid currentcolor;
+    }
+}
+
+.box:target {
+    z-index: 1;
+    display: block;
+}
+
+.box:not(:target) {
+    z-index: 0;
+    display: none;
+}
+
+///* 实现 登录/注册下的 .line 动画  start */
+//.tool:not(:target):first-child{
+//  & .line {
+//      @include transition(all 0.3s ease);
+//  }
+//
+//  & > div.sign-in.active {
+//      & ~ .line {
+//          left: 3px !important;
+//      }
+//
+//  }
+//
+//  & > div.sign-up.active {
+//      & ~ .line {
+//          left: 55px !important;
+//      }
+//  }
+//}
+
+/* 登录/注册切换动画 */
+#signIn:target ~ .tool {
+    & > .sign-in {
+        a {
+            color: dodgerblue;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    & > .line {
+        @include transition(all 0.3s ease);
+        left: 3px !important;
+    }
+}
+
+#signUp:target ~ .tool {
+    & > .sign-up {
+        a {
+            color: dodgerblue;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    & > .line {
+        @include transition(all 0.3s ease);
+        left: 55px !important;
+    }
+}
+
+.main {
+    width: $content-width;
+    padding: 10px;
+    margin: 10px auto;
+    margin-top: 20px;
+
+    /* logo */
+    > .header {
+
+        > .logo {
+            height: 70px;
+            text-align: center;
+            padding: 20px 10px;
+
+            img {
+                width: auto;
+                height: 100%;
+
+            }
+        }
+
+        > .title {
+            text-align: center;
+            margin: 10px;
+
+            & > span {
+                font-size: 18px;
+                color: rgba(33, 33, 33, 1);
+            }
+        }
+    }
+
+    /* 内容 */
+    > .content {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 50px;
+
+        > .tool {
+            position: absolute;
+            top: 0px;  right: 0; left: 0;
+            margin: 10px auto;
+            padding: 5px;
+            font-size: 18px;
+            clear: both;
+            overflow: hidden;
+            width: 100px;
+            z-index: 0;
+
+            .sign-in, .sign-up {
+
+                a {
+                    padding: 5px;
+                    color: #999;
+
+                    &:hover {
+                        text-decoration: none !important;
+                    }
+                }
+
+                padding: 0px;
+                box-sizing: border-box;
+                border-bottom: 2px solid transparent;
+                @include transition(all 0.1s ease-in-out);
+            }
+
+            .sign-in {
+                float: left;
+            }
+
+            .sign-up {
+                float: right;
+            }
+
+            .line {
+                position: absolute;
+                bottom: 0; left: 3px;
+                width: 50px;
+                height: 2px;
+                background-color: dodgerblue;
+            }
+
+            .active {
+
+                a {
+                    color: dodgerblue;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        > .box {
+            margin: 10px auto;
+            margin-top: 15px;
+            width: $box-width;
+            color: rgba(55, 55, 55, 1);
+            @include transition(all 0.2s ease-in-out);
+            position: relative;
+
+//          .error {
+//              font-family: inherit;
+//              font-size: 14px;
+//              position: absolute;
+//              right: 5px; top: 0;
+//              color: red;
+//
+//              &:nth-child(1) {
+//                  top: 15px
+//              }
+//
+//              &:nth-child(2) {
+//                  top: 65px
+//              }
+//
+//              &:nth-child(3) {
+//                  top: 116px
+//              }
+//          }
+
+
+            a {
+                font-size: 14px;
+
+                &:hover {
+                    clear: both;
+                    overflow: hidden;
+                }
+            }
+
+            .check { /* 记住我 */
+                clear: both;
+                overflow: hidden;
+                margin-bottom: 10px;
+                font-size: 15px;
+
+                input {
+                    font-size: 15px !important;
+                }
+            }
+
+            .captcha { /* 验证码 */
+                position: absolute;
+                right: 10px;
+                bottom: 125px;
+                right: .5em;
+                width: 100px;
+                height: 38px;
+
+                img {
+                    cursor: pointer;
+                    width: 100%;
+                    height: auto;
+                }
+
+                &:hover::after {
+                    content: '看不清楚？换一张';
+                    font: inherit;
+                    font-size: 13px;
+                    position: absolute;
+                    top: -40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: auto;
+                    padding: 4px 12px;
+                    background-color: rgba(0, 0, 0, 0.65);
+                    color: white;
+                    width: 110%;
+                    text-align: center;
+                    border-radius: 3px;
+                }
+
+                &:hover::before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: -15px;
+                    left: 0; right: 0;
+                    margin: auto;
+                    border: 10px solid transparent;
+                    border-top: 10px solid rgba(0, 0, 0, 0.7);
+                    border-radius: 2px;
+                }
+            }
+
+            .text {
+                font-size: 15px;
+                padding: 5px;
+            }
+
+            .btn-hover:hover {
+                opacity: 0.8;
+            }
+
+            > .protocol { /* 知乎协议 */
+                font-size: 14px;
+                padding: 0 20px;
+                box-sizing: border-box;
+                text-align: center;
+                line-height: 24px;
+                color: rgba(100, 100, 100, 0.9);
+
+                a {
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                }
+            }
+        }
+
+
+        > .code {
+            position: absolute;
+            bottom: 10px;
+            left: 0; right: 0;
+            text-align: center;
+            padding: 15px 10px;
+            margin: 10px auto;
+            @include box-shadow(0px 0px 10px 3px #ccc);
+            @include transition(all 0.2s ease);
+            background-color: white;
+            max-width: 260px;
+
+            &::after { /* 小三角 */
+                content: '';
+                position: absolute;
+                bottom: -55px;
+                left: 0; right: 0;
+                margin: auto;
+                width: 0;
+                height: 0;
+                border: 30px solid transparent;
+                border-top: 30px solid white;
+                border-radius: 5px;
+                z-index: 0;
+            }
+
+        }
+
+        .app:focus + .code {
+            transform: translateY(-20%);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .app:not(:focus) + .code {
+            opacity: 0;
+            z-index: -1;
+        }
+
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+}
+
+/* 尾部信息 */
+.footer {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 60px;
+    margin: auto;
+    width: 100%;
+    line-height: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    color: #aebdc9;
+    padding: 10px;
+
+    a {
+        color: inherit;
+    }
+
+    .short {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 960px) {
+
+    .main {
+        margin-top: 0px;
+
+        .header {
+            .logo {
+                transform: scale(0.8);
+            }
+        }
+    }
+
+    .footer {
+        bottom: 30px;
+
+        .long {
+            display: none;
+        }
+        .short {
+            display: block !important;
+        }
+    }
+
+}
+
