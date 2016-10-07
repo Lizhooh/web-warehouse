@@ -1,376 +1,437 @@
 @charset "UTF-8";
-html, body {
-  font-family: 'consolas', "microsoft yahei", "arial, helvetica, sans-serif";
-  min-height: 700px;
-  height: calc(100% - 20px);
-  width: auto;
-  margin: 0;
-  padding: 0;
-  position: relative;
+html,
+body {
+    font-family: 'consolas', "microsoft yahei", "arial, helvetica, sans-serif";
+    min-height: 700px;
+    height: calc(100% - 20px);
+    width: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 a {
-  text-decoration: none;
-  color: #00ACED;
+    text-decoration: none;
+    color: #00ACED;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #FF6600;
+    text-decoration: underline;
+    color: #FF6600;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
 
 div {
-  font-family: inherit;
+    font-family: inherit;
 }
 
-input[type=text], input[type=password], button {
-  font-family: inherit;
-  display: block;
-  border: none;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 17px 15px;
-  border: 1px solid #ddd;
-  border-top: none;
-}
-input[type=text]:focus, input[type=password]:focus, button:focus {
-  outline: none;
+input[type=text],
+input[type=password],
+button {
+    font-family: inherit;
+    display: block;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 17px 15px;
+    border: 1px solid #ddd;
+    border-top: none;
 }
 
-input[type=text]:first-of-type, input[type=password]:first-of-type {
-  border-radius: 3px 3px 0 0;
-  border-top: 1px solid #ddd !important;
+input[type=text]:focus,
+input[type=password]:focus,
+button:focus {
+    outline: none;
 }
-input[type=text]:last-of-type, input[type=password]:last-of-type {
-  border-radius: 0 0 3px 3px;
+
+input[type=text]:first-of-type,
+input[type=password]:first-of-type {
+    border-radius: 3px 3px 0 0;
+    border-top: 1px solid #ddd !important;
+}
+
+input[type=text]:last-of-type,
+input[type=password]:last-of-type {
+    border-radius: 0 0 3px 3px;
 }
 
 button {
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 15px auto;
-  max-width: 290px;
-  color: white;
-  background-color: dodgerblue;
-  border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 15px auto;
+    max-width: 290px;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 3px;
 }
+
 button.light {
-  background-color: white;
-  color: dodgerblue;
-  border: 1px solid currentcolor;
+    background-color: white;
+    color: dodgerblue;
+    border: 1px solid currentcolor;
 }
 
 .box:target {
-  z-index: 1;
-  display: block;
+    z-index: 1;
+    display: block;
 }
 
 .box:not(:target) {
-  z-index: 0;
-  display: none;
+    z-index: 0;
+    display: none;
 }
 
+
 /* 登录/注册切换动画 */
+
 #signIn:target ~ .tool > .sign-in a {
-  color: dodgerblue;
+    color: dodgerblue;
 }
+
 #signIn:target ~ .tool > .sign-in a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 #signIn:target ~ .tool > .line {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  left: 3px !important;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    left: 3px !important;
 }
 
 #signUp:target ~ .tool > .sign-up a {
-  color: dodgerblue;
+    color: dodgerblue;
 }
+
 #signUp:target ~ .tool > .sign-up a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 #signUp:target ~ .tool > .line {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  left: 55px !important;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    left: 55px !important;
 }
 
 .main {
-  width: 300px;
-  padding: 10px;
-  margin: 10px auto;
-  margin-top: 20px;
-  /* logo */
-  /* 内容 */
-}
-.main > .header > .logo {
-  height: 70px;
-  text-align: center;
-  padding: 20px 10px;
-}
-.main > .header > .logo img {
-  width: auto;
-  height: 100%;
-}
-.main > .header > .title {
-  text-align: center;
-  margin: 10px;
-}
-.main > .header > .title > span {
-  font-size: 18px;
-  color: #212121;
-}
-.main > .content {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  padding-top: 50px;
-}
-.main > .content > .tool {
-  position: absolute;
-  top: 0px;
-  right: 0;
-  left: 0;
-  margin: 10px auto;
-  padding: 5px;
-  font-size: 18px;
-  clear: both;
-  overflow: hidden;
-  width: 100px;
-  z-index: 0;
-}
-.main > .content > .tool .sign-in, .main > .content > .tool .sign-up {
-  padding: 0px;
-  box-sizing: border-box;
-  border-bottom: 2px solid transparent;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-.main > .content > .tool .sign-in a, .main > .content > .tool .sign-up a {
-  padding: 5px;
-  color: #999;
-}
-.main > .content > .tool .sign-in a:hover, .main > .content > .tool .sign-up a:hover {
-  text-decoration: none !important;
-}
-.main > .content > .tool .sign-in {
-  float: left;
-}
-.main > .content > .tool .sign-up {
-  float: right;
-}
-.main > .content > .tool .line {
-  position: absolute;
-  bottom: 0;
-  left: 3px;
-  width: 50px;
-  height: 2px;
-  background-color: dodgerblue;
-}
-.main > .content > .tool .active a {
-  color: dodgerblue;
-}
-.main > .content > .tool .active a:hover {
-  text-decoration: none;
-}
-.main > .content > .box {
-  margin: 10px auto;
-  margin-top: 15px;
-  width: 290px;
-  color: #373737;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-}
-.main > .content > .box a {
-  font-size: 14px;
-}
-.main > .content > .box a:hover {
-  clear: both;
-  overflow: hidden;
-}
-.main > .content > .box .check {
-  /* 记住我 */
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-.main > .content > .box .check input {
-  font-size: 15px !important;
-}
-.main > .content > .box .captcha {
-  /* 验证码 */
-  position: absolute;
-  right: 10px;
-  bottom: 125px;
-  right: .5em;
-  width: 100px;
-  height: 38px;
-}
-.main > .content > .box .captcha img {
-  cursor: pointer;
-  width: 100%;
-  height: auto;
-}
-.main > .content > .box .captcha:hover::after {
-  content: '看不清楚？换一张';
-  font: inherit;
-  font-size: 13px;
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: auto;
-  padding: 4px 12px;
-  background-color: rgba(0, 0, 0, 0.65);
-  color: white;
-  width: 110%;
-  text-align: center;
-  border-radius: 3px;
-}
-.main > .content > .box .captcha:hover::before {
-  content: '';
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -15px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 10px solid transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.7);
-  border-radius: 2px;
-}
-.main > .content > .box .text {
-  font-size: 15px;
-  padding: 5px;
-}
-.main > .content > .box .btn-hover:hover {
-  opacity: 0.8;
-}
-.main > .content > .box > .protocol {
-  /* 知乎协议 */
-  font-size: 14px;
-  padding: 0 20px;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 24px;
-  color: rgba(100, 100, 100, 0.9);
-}
-.main > .content > .box > .protocol a {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-.main > .content > .code {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 15px 10px;
-  margin: 10px auto;
-  -webkit-box-shadow: 0px 0px 10px 3px #ccc;
-  -moz-box-shadow: 0px 0px 10px 3px #ccc;
-  box-shadow: 0px 0px 10px 3px #ccc;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  background-color: white;
-  max-width: 260px;
-}
-.main > .content > .code::after {
-  /* 小三角 */
-  content: '';
-  position: absolute;
-  bottom: -55px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border: 30px solid transparent;
-  border-top: 30px solid white;
-  border-radius: 5px;
-  z-index: 0;
-}
-.main > .content .app:focus + .code {
-  transform: translateY(-20%);
-  opacity: 1;
-  z-index: 1;
-}
-.main > .content .app:not(:focus) + .code {
-  opacity: 0;
-  z-index: -1;
-}
-.main .left {
-  float: left;
-}
-.main .right {
-  float: right;
+    width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    margin-top: 20px;
+    /* logo */
+    /* 内容 */
 }
 
+.main > .header > .logo {
+    height: 70px;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.main > .header > .logo img {
+    width: auto;
+    height: 100%;
+}
+
+.main > .header > .title {
+    text-align: center;
+    margin: 10px;
+}
+
+.main > .header > .title > span {
+    font-size: 18px;
+    color: #212121;
+}
+
+.main > .content {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+.main > .content > .tool {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 18px;
+    clear: both;
+    overflow: hidden;
+    width: 100px;
+    z-index: 0;
+}
+
+.main > .content > .tool .sign-in,
+.main > .content > .tool .sign-up {
+    padding: 0px;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.main > .content > .tool .sign-in a,
+.main > .content > .tool .sign-up a {
+    padding: 5px;
+    color: #999;
+}
+
+.main > .content > .tool .sign-in a:hover,
+.main > .content > .tool .sign-up a:hover {
+    text-decoration: none !important;
+}
+
+.main > .content > .tool .sign-in {
+    float: left;
+}
+
+.main > .content > .tool .sign-up {
+    float: right;
+}
+
+.main > .content > .tool .line {
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    width: 50px;
+    height: 2px;
+    background-color: dodgerblue;
+}
+
+.main > .content > .tool .active a {
+    color: dodgerblue;
+}
+
+.main > .content > .tool .active a:hover {
+    text-decoration: none;
+}
+
+.main > .content > .box {
+    margin: 10px auto;
+    margin-top: 15px;
+    width: 290px;
+    color: #373737;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.main > .content > .box a {
+    font-size: 14px;
+}
+
+.main > .content > .box a:hover {
+    clear: both;
+    overflow: hidden;
+}
+
+.main > .content > .box .check {
+    /* 记住我 */
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.main > .content > .box .check input {
+    font-size: 15px !important;
+}
+
+.main > .content > .box .captcha {
+    /* 验证码 */
+    position: absolute;
+    right: 10px;
+    bottom: 125px;
+    right: .5em;
+    width: 100px;
+    height: 38px;
+}
+
+.main > .content > .box .captcha img {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+.main > .content > .box .captcha:hover::after {
+    content: '看不清楚？换一张';
+    font: inherit;
+    font-size: 13px;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    padding: 4px 12px;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    width: 110%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.main > .content > .box .captcha:hover::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+}
+
+.main > .content > .box .text {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.main > .content > .box .btn-hover:hover {
+    opacity: 0.8;
+}
+
+.main > .content > .box > .protocol {
+    /* 知乎协议 */
+    font-size: 14px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 24px;
+    color: rgba(100, 100, 100, 0.9);
+}
+
+.main > .content > .box > .protocol a {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.main > .content > .code {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 15px 10px;
+    margin: 10px auto;
+    -webkit-box-shadow: 0px 0px 10px 3px #ccc;
+    -moz-box-shadow: 0px 0px 10px 3px #ccc;
+    box-shadow: 0px 0px 10px 3px #ccc;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: white;
+    max-width: 260px;
+}
+
+.main > .content > .code::after {
+    /* 小三角 */
+    content: '';
+    position: absolute;
+    bottom: -55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-top: 30px solid white;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.main > .content .app:focus + .code {
+    transform: translateY(-20%);
+    opacity: 1;
+    z-index: 1;
+}
+
+.main > .content .app:not(:focus) + .code {
+    opacity: 0;
+    z-index: -1;
+}
+
+.main .left {
+    float: left;
+}
+
+.main .right {
+    float: right;
+}
+
+
 /* 尾部信息 */
+
 .footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-  margin: auto;
-  width: 100%;
-  line-height: 24px;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 12px;
-  color: #aebdc9;
-  padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    margin: auto;
+    width: 100%;
+    line-height: 24px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    color: #aebdc9;
+    padding: 10px;
 }
+
 .footer a {
-  color: inherit;
+    color: inherit;
 }
+
 .footer .short {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 960px) {
-  .main {
-    margin-top: 0px;
-  }
-  .main .header .logo {
-    transform: scale(0.8);
-  }
-
-  .footer {
-    bottom: 30px;
-  }
-  .footer .long {
-    display: none;
-  }
-  .footer .short {
-    display: block !important;
-  }
+    .main {
+        margin-top: 0px;
+    }
+    .main .header .logo {
+        transform: scale(0.8);
+    }
+    .footer {
+        bottom: 30px;
+    }
+    .footer .long {
+        display: none;
+    }
+    .footer .short {
+        display: block !important;
+    }
 }
+
 
 /*# sourceMappingURL=index.css.map */
