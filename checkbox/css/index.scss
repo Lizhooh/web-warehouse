@@ -1,0 +1,58 @@
+
+html, body {
+    margin: 0;
+    padding: 10px;
+}
+
+.checkbox {
+    input[type=checkbox] {
+        display: none;
+
+        & + label {
+            -webkit-transform: rotateZ(0);
+               -moz-transform: rotateZ(0);
+                -ms-transform: rotateZ(0);
+                 -o-transform: rotateZ(0);
+                    transform: rotateZ(0);
+
+            cursor: pointer;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid dodgerblue;
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 2px dodgerblue;
+            text-align: center;
+
+            -webkit-transition: border-radius 0.5s ease-in-out;
+               -moz-transition: border-radius 0.5s ease-in-out;
+                -ms-transition: border-radius 0.5s ease-in-out;
+                 -o-transition: border-radius 0.5s ease-in-out;
+                    transition: border-radius 0.5s ease-in-out;
+
+            > i.fa {
+                visibility: hidden;
+                color: dodgerblue;
+                font-size: 22px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    #check:checked {
+        & + label {
+            border-radius: 4px;
+            border: 1px solid orangered;
+            box-shadow: 0px 0px 0px 2px orangered;
+    //      background: url("../img/dui.jpg") no-repeat center;
+    //      background-size: cover;
+            > i.fa {
+                visibility: visible;
+                color: orangered;
+            }
+        }
+    }
+}
+
