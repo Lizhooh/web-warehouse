@@ -1,7 +1,7 @@
 
     require.config({
         paths: {
-            'jquery':       ['http://libs.baidu.com/jquery/2.0.3/jquery', './lib/jquery.min'],
+            'jquery':       ['http://libs.baidu.com/jquery/2.0.3/jquery.min', './lib/jquery.min'],
             'jqrcode':      ['./lib/jquery.qrcode.min'],        /* 生成二维码 */
             'qrcodeLib':    ['./lib/qrcode.lib.min'],           /* 解析二维码 */
             'xqrcode':      ['./model/xqrcode'],                /* 扫码二维码 */
@@ -18,9 +18,19 @@
         }
     });
 
+    require(['qrcodeLib', 'xqrcode'],
+        function(qrcodeLib, xqrcode) {
+            /**
+             * 扫码
+             */
+            xqrcode.init(
+                $('[node-type=qr-btn]')
+            );
+        }
+    );
 
-    require(['jquery','jqrcode', 'qrcodeLib', 'xqrcode','utf'],
-        function($, jqrcode, qrcodeLib, xqrcode, utf) {
+    require(['jquery', 'jqrcode', 'utf'],
+        function($, jqrcode, utf) {
 
             var text = '',
                 color = 'rgba(255, 40, 0, 1)',
@@ -66,14 +76,10 @@
                         color = $(who).css('background-color');
                         createQrcode($("#qrcode"), text, color);
                     })
+                ;
             ;
-
-            /**
-             * 扫码
-             */
-            xqrcode.init(
-                $('[node-type=qr-btn]')
-            );
         }
     );
+
+
 
