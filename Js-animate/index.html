@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        html, body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+        }
+
+        .box {
+            position: absolute;
+            top: 100px; left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: dodgerblue;
+            box-shadow: 0px 0px 3px dodgerblue;
+            border-radius: 3px;
+        }
+
+        .button {
+            font: 20px "consolas", "microsoft yahei", "arial, helvetica, sans-serif";
+            margin: 20px;
+            background-color: orange;
+            border: 1px solid orange;
+            box-shadow: 0px 0px 3px orange;
+            border-radius: 3px;
+            color: white;
+            padding: 0.5em 1.8em;
+            outline: orange;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        .button:active {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+    <button class="button">Go</button>
+
+    <!-- 动画库 -->
+    <script src="js/module/animate.js"></script>
+
+    <script>
+
+        var box = $$('.box')[0];
+        var k = -1;
+
+        $$('.button')[0].onclick = function(event) {
+            var speed = 500;
+
+            switch(k = ++k % 7) {
+                case 0: {
+                    box.moveTo(300, 0, speed);
+                    break;
+                }
+                case 1: {
+                    box.moveTo(0, 300, speed);
+                    break;
+                }
+                case 2: {
+                    box.moveTo(-300, 0, speed);
+                    break;
+                }
+                case 3: {
+                    box.moveTo(0, -300, speed);
+                    break;
+                }
+                case 4: {
+                    box.moveTo(300, 300,speed);
+                    break;
+                }
+                case 5: {
+                    box.moveTo(-300, 0, speed);
+                    break;
+                }
+                case 6: {
+                    box.moveTo(0, -300, speed);
+                    break;
+                }
+            }
+        };
+
+    </script>
+</body>
+</html>
