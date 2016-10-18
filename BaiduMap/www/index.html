@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ionic 百度地图</title>
+
+    <link rel="stylesheet" href="css/ionic.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pUq8GjDttvXskGqE4rxzA2MZuggVp1Xl"></script>
+</head>
+<body ng-controller="Map">
+
+    <div class="bar bar-header bar-balanced">
+        <button class="button button-icon icon ion-android-add" ng-click="add()"></button>
+        <div class="title">Ionic 百度地图</div>
+        <button class="button button-icon icon ion-android-remove" ng-click="remove()"></button>
+    </div>
+
+    <div class="bar bar-subheader">
+        <label class="item-input" style="width: calc(100% - 65px);">
+            <div id="panel"></div>
+            <i class="icon ion-ios-search placeholder-icon" style="margin-right: 5px;"></i>
+            <input type="text" placeholder="位置名称" ng-model="city" id="search"/>
+        </label>
+        <button class="button button-balanced pull-right" ng-click="search()" id="s">搜索</button>
+    </div>
+
+    <div class="content has-header full">
+        <div id="container" class="full"></div>
+    </div>
+
+    <script src="js/BMap.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>

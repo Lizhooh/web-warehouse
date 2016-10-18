@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  padding: 10px;
+  padding: 20px;
 }
 
 .checkbox input[type=checkbox] {
@@ -37,7 +37,7 @@ html, body {
 .checkbox #check:checked + label {
   border-radius: 4px;
   border: 1px solid orangered;
-  box-shadow: 0px 0px 0px 2px orangered, 0px 0px 2px 4px orangered;
+  box-shadow: 0px 0px 0px 2px orangered;
 }
 .checkbox #check:checked + label > i.fa {
   visibility: visible;

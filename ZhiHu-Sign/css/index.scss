@@ -106,26 +106,6 @@ button {
     display: none;
 }
 
-///* 实现 登录/注册下的 .line 动画  start */
-//.tool:not(:target):first-child{
-//  & .line {
-//      @include transition(all 0.3s ease);
-//  }
-//
-//  & > div.sign-in.active {
-//      & ~ .line {
-//          left: 3px !important;
-//      }
-//
-//  }
-//
-//  & > div.sign-up.active {
-//      & ~ .line {
-//          left: 55px !important;
-//      }
-//  }
-//}
-
 /* 登录/注册切换动画 */
 #signIn:target ~ .tool {
     & > .sign-in {
@@ -188,6 +168,7 @@ button {
 
             & > span {
                 font-size: 18px;
+                color: #333;
                 color: rgba(33, 33, 33, 1);
             }
         }
@@ -260,6 +241,7 @@ button {
             margin: 10px auto;
             margin-top: 15px;
             width: $box-width;
+            color: #555;
             color: rgba(55, 55, 55, 1);
             @include transition(all 0.2s ease-in-out);
             position: relative;
@@ -329,6 +311,7 @@ button {
                     transform: translateX(-50%);
                     margin: auto;
                     padding: 4px 12px;
+                    background-color: #444;
                     background-color: rgba(0, 0, 0, 0.65);
                     color: white;
                     width: 110%;
@@ -345,6 +328,7 @@ button {
                     left: 0; right: 0;
                     margin: auto;
                     border: 10px solid transparent;
+                    border-top: 10px solid #444;
                     border-top: 10px solid rgba(0, 0, 0, 0.7);
                     border-radius: 2px;
                 }
@@ -365,6 +349,7 @@ button {
                 box-sizing: border-box;
                 text-align: center;
                 line-height: 24px;
+                color: rgb(100, 100, 100);
                 color: rgba(100, 100, 100, 0.9);
 
                 a {
