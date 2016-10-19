@@ -24,7 +24,17 @@ var $$ = (function(undefined) {
      */
     var int = function(number) {
         return parseInt(number, 10);
-    }
+    };
+
+    /**
+     * 进制装换
+     * @param{Number} num
+     * @param{Number} n: 原来的进制
+     * @return{Number/String}
+     */
+    var conver = function(num, n) {
+        return parseInt(num, n);
+    };
 
     /**
      * 选择器引擎
@@ -68,8 +78,9 @@ var $$ = (function(undefined) {
 
     // 浏览器是否支持 css3
     var core = hasCss3();
-//  var times = null;
 
+    // 静态变量, bool表示是否在动画中
+    _$.animate = false;
 
     // 扩展 Element 的函数
     (function(element) {
@@ -78,7 +89,8 @@ var $$ = (function(undefined) {
          * 平移动画引擎
          * @param{Number} x: 水平距离
          * @param{Number} y: 垂直距离
-         * @param{Number} spend: 动画时间. 可选, 默认1000, 单位 ms
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Function} callback: 回调函数
          */
         var moveTo = function(x, y, spend, callback) {
             var node = this;
@@ -86,7 +98,7 @@ var $$ = (function(undefined) {
             // 设置默认值
             x = x || 0;
             y = y || 0;
-            spend = spend || 1000;
+            spend = spend || 600;
 
             // 计算运动次数, 每秒 50HZ
             var frame = float(spend / 1000) * 50;
@@ -108,8 +120,9 @@ var $$ = (function(undefined) {
                     // 初始化一些值
                     if(i == 0) {
                         node.style.position = 'absolute';
-                        lenX = node.offsetLeft;
-                        lenY = node.offsetTop;
+                        lenX = int(getComputedStyle(node, null).left);
+                        lenY = int(getComputedStyle(node, null).top);
+                        _$.animate = true;
                     }
 
                     node.style.top  = lenY + 'px';
@@ -120,6 +133,7 @@ var $$ = (function(undefined) {
 
                     // 动画结束
                     if(i++ > frame) {
+                        _$.animate = false;
                         clearTimeout(times);
                         // 调用回调函数
                         callback();
@@ -133,12 +147,13 @@ var $$ = (function(undefined) {
                 // css3
                 move = function() {
                     // 设置过渡
-//                  if(!node.style[core + 'transition']) {
+                    if(!node.style[core + 'transition']) {
                         node.style[core + 'transition'] = "all " + spend + "ms " + buffer;
-//                  }
+                    }
                     // 设置位移
                     node.style[core + 'transform']  = "translate(" + x + "px," + y + "px)";
                     node.style.position = 'absolute';
+                    _$.animate = true;
 
                     // 动画完成后
                     setTimeout(function() {
@@ -146,41 +161,30 @@ var $$ = (function(undefined) {
                         node.style[core + 'transition'] = '';
                         node.style[core + 'transform']  = '';
 
-                        node.style.left = node.offsetLeft + x + 'px';
-                        node.style.top  = node.offsetTop  + y + 'px';
+                        node.style.left = int(getComputedStyle(node, null).left) + x + 'px';
+                        node.style.top  = int(getComputedStyle(node, null).top)  + y + 'px';
 
-                        clearTimeout(times);
+                        _$.animate = false;
                         callback();
                     }, spend + 10);
                 };
 
-            // 不支持css3
-            if(core === false) {
-                _move();
-            }
-            // 支持css3
-            else {
-                move();
-            }
+            // 不支持css3使用 _
+            core === false ? _move() : move();
         };
 
         /**
          * 透明动画引擎
          * @param{Number} number: 透明度 0-1
-         * @param{Number} spend: 动画时间. 可选, 默认1000, 单位 ms
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
          * @param{Boolean} start: 透明度为0时，是否隐藏结点, 可选，默认false
+         * @param{Function} callback: 回调函数
          */
         var opacityTo = function(number, spend, start, callback) {
             var node = this;
 
-            callback = callback || function() {};
-
-            if(typeof callback !== 'function') {
-                throw new Error(callback + 'is not function.');
-            }
-
             // 设置默认值
-            spend = spend || 1000;
+            spend = spend || 600;
             start = start || false;
 
             // 计算运动次数, 每秒 50HZ
@@ -191,9 +195,9 @@ var $$ = (function(undefined) {
                 times = null;
 
             var setOpacity = function(number) {
-//              if(isIE())
+                if(isIE())
                     node.style.filter  = 'alpha(opactiy:' + number * 100 + ')';
-//              else
+                else
                     node.style.opacity = number;
             };
 
@@ -202,11 +206,12 @@ var $$ = (function(undefined) {
 
                 if(i == 0) {
                     len = node.opacity || node.style.filter || len;
+                    _$.animate = true;
                 }
 
-//              if(isIE())
+                if(isIE())
                     node.style.filter  = 'alpha(opactiy:' + number * 100 + ')';
-//              else
+                else
                     node.style.opacity = number;
 
                 len += step;
@@ -217,6 +222,7 @@ var $$ = (function(undefined) {
                         node.display = 'none';
                     }
 
+                    _$.animate = false;
                     clearTimeout(times);
                     // 调用回调函数
                     callback();
@@ -236,6 +242,8 @@ var $$ = (function(undefined) {
                 // 设置透明度
                 setOpacity(number);
 
+                _$.animate = true;
+
                 // 动画结束后
                 setTimeout(function() {
                     // 清空状态
@@ -245,18 +253,153 @@ var $$ = (function(undefined) {
                         node.display = 'none';
                     }
 
-                    clearTimeout(times);
+                    _$.animate = false;
                     callback();
                 }, spend + 10);
-
             };
 
-            if(core === false) {
-                _opacity();
-            }
-            else {
-                opacity();
-            }
+            // 不支持css3使用 _
+            core === false ? _opacity() : opacity();
+        };
+
+        /**
+         * 颜色引擎
+         * - 使用
+         * - element.colorTo(color, spend, callback);
+         * @param{String} color: rgba颜色值或十六进制颜色值
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Function} callback: 回调函数
+         */
+        var bgColorTo = function(color, spend, callback) {
+            var node = this;
+            spend = spend || 600;
+
+
+            var dtR = 0, dtG = 0, dtB = 0, dtA = 0,
+                 or = 0, og  = 0, ob  = 0, oa  = 0;
+
+            // setDt
+            (function(undefined) {
+                var oldColor = getComputedStyle(node).backgroundColor;
+
+                var getRGBA = function(oldColor, name) {
+                    var str = null;
+                    if(oldColor.substr(0, 4) === 'rgba') {
+                        str = oldColor.substr(5, oldColor.length - 6);
+                    }
+                    else {
+                        str = oldColor.substr(4, oldColor.length - 5);
+                    }
+
+                    var na  = {'r':0, 'g':1, 'b':2, 'a':3},
+                        arr = str.split(',');
+
+                    if(arr[3] === undefined) {
+                        arr[3] = '1';
+                    }
+
+                    return arr[ na[name] ].trim();
+                };
+
+
+                or = int(getRGBA(oldColor, 'r')),
+                og = int(getRGBA(oldColor, 'g')),
+                ob = int(getRGBA(oldColor, 'b')),
+                oa = float(getRGBA(oldColor, 'a'));
+
+                var r, g, b, a;
+
+                if(color[0] === '#') {
+                    r = conver(color.substr(1, 2), 16),
+                    g = conver(color.substr(3, 2), 16),
+                    b = conver(color.substr(5, 2), 16),
+                    a  = 1.0;
+                }
+                if(color.substr(0, 3) === 'rgb') {
+                    r = int(getRGBA(color, 'r')),
+                    g = int(getRGBA(color, 'g')),
+                    b = int(getRGBA(color, 'b')),
+                    a = 1.0;
+
+                }
+                if(color.substr(0, 4) === 'rgba') {
+                    r = int(getRGBA(color, 'r')),
+                    g = int(getRGBA(color, 'g')),
+                    b = int(getRGBA(color, 'b')),
+                    a = float(getRGBA(color, 'a'));
+                }
+
+                dtR = r - or;
+                dtB = b - ob;
+                dtG = g - og;
+                dtA = a - oa;
+
+            })(undefined);
+
+
+            var frame = float(spend / 1000) * 50,
+                i     = 0,
+                stepR = float(dtR / frame),
+                stepG = float(dtG / frame),
+                stepB = float(dtB / frame),
+                stepA = float(dtA / frame),
+                lenR  = 0,
+                lenG  = 0,
+                lenB  = 0,
+                lenA  = 0,
+                times = null;
+
+            var _colors = function() {
+
+                // 初始化
+                if(i == 0) {
+                    lenR = or;
+                    lenG = og;
+                    lenB = ob;
+                    lenA = oa;
+
+                    _$.animate = true;
+                }
+
+                node.style.backgroundColor = 'rgba(' + int(lenR) + ',' + int(lenG) + ',' + int(lenB) + ',' + lenA + ')';
+
+                lenR += stepR;
+                lenG += stepG;
+                lenB += stepB;
+                lenA += stepA;
+
+                if(i++ > frame) {
+                    node.style.backgroundColor = color;
+                    clearTimeout(times);
+                    _$.animate = false;
+                    callback();
+                    return;
+                }
+
+                times = setTimeout(_colors, spend / frame);
+            };
+
+            var colors = function() {
+                // 设置过渡
+                if(!node.style[core + 'transition']) {
+                    node.style[core + 'transition'] = "all " + spend + "ms " + buffer;
+                }
+                // 设置颜色
+                node.style.backgroundColor = color;
+                _$.animate = true;
+
+                // 动画结束后
+                setTimeout(function() {
+                    // 清空状态
+                    node.style[core + 'transition'] = '';
+
+                    _$.animate = false;
+                    callback();
+                }, spend + 10);
+            };
+
+            // 不支持css3使用 _
+            core === false ? _colors() : colors();
         };
 
 
@@ -275,7 +418,8 @@ var $$ = (function(undefined) {
          *
          * @param{Number} x: 水平距离
          * @param{Number} y: 垂直距离
-         * @param{Number} spend: 动画时间. 可选, 默认1000, 单位 ms
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Function} callback: 回调函数
          */
         element.prototype.moveTo = function(x, y, spend, callback) {
             // 回调函数, 绑定其 this 到 element 上
@@ -284,19 +428,45 @@ var $$ = (function(undefined) {
             // 改变 moveTo 的 this 指向
             moveTo.call(this, x, y, spend, callback.bind(this));
             return this;
-        }
+        };
 
+        /**
+         * 透明动画引擎
+         * - 使用
+         * - element.opacityTo(number, [spend], [start], [callback]);
+         * @param{Number} number: 透明度 0-1
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Boolean} start: 透明度为0时，是否隐藏结点, 可选，默认false
+         * @param{Function} callback: 回调函数
+         */
         element.prototype.opacityTo = function(number, spend, start, callback) {
             callback = callback || function() {};
 
             opacityTo.call(this, number, spend, start, callback.bind(this));
             return this;
-        }
+        };
+
+        /**
+         * 颜色引擎
+         * - 使用
+         * - element.colorTo(color, spend, callback);
+         * @param{String} color: rgba颜色值或十六进制颜色值
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Function} callback: 回调函数
+         */
+        element.prototype.bgColorTo = function(color, spend, callback) {
+            callback = callback || function() {};
+
+            bgColorTo.call(this, color, spend, callback.bind(this));
+            return this;
+        };
 
     }(Element));
 
 
     return _$;
+
+
 })(undefined);
 
 

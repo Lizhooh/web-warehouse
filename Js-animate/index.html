@@ -56,12 +56,11 @@
 </head>
 <body>
 
-
-    <div class="box"></div>
-    <button class="button">Go</button>
+    <div class="box" id="box"></div>
+    <button class="button" id="btn">Go</button>
 
     <!-- 动画库 -->
-    <script src="js/module/animate.js"></script>
+    <script src="js/animate.js"></script>
 
     <script>
 
@@ -69,6 +68,8 @@
         var k = -1;
 
         $$('.button')[0].onclick = function(event) {
+
+            if($$.animate) return;
 
             var spend = 700;
             var run   = 260;
@@ -81,7 +82,8 @@
                 case 1: {
                     box
                         .moveTo(0, run, spend)
-                        .opacityTo(0.2, spend);
+                        .opacityTo(0.2, spend)
+                        .bgColorTo('rgba(235, 24, 40, 0.8)', 1000);
                     break;
                 }
                 case 2: {
@@ -102,7 +104,8 @@
                 case 5: {
                     box
                         .moveTo(-run, 0, spend)
-                        .opacityTo(0.6, spend, true);
+                        .opacityTo(0.6, spend, true)
+                        .bgColorTo('rgba(30, 144, 255, 1)', 1000);
                     break;
                 }
                 case 6: {
