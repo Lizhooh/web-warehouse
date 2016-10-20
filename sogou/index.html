@@ -55,15 +55,56 @@
                     <!-- 天气 -->
                     <span>
                         <label>广东 中山</label>
-                        <img src="img/duoyun.png" alt="多云" style="width: 16px;"/>
+                        <img src="img/duoyun.png" title="多云" style="width: 16px;"/>
                         <label class="oC">28℃</label>
                         <label style="color: #FFA500;">良 87</label>
 
+                        <!-- 天气面板 -->
                         <div class="tianqi">
+                            <header>
+                                <div class="top">
+                                    <span class="time">10月20日 （周四）</span>
+                                    <a class="red" href="" style="color: #aaa; float: right;">未来一周天气</a>
+                                </div>
 
+                                <div class="content">
+                                    <div class="content-left">
+                                        <span style="font-size: 64px;">28</span>
+                                        <span style="font-size: 20px;">℃</span>
+                                        <div style="color: #FFA500;">良 87</div>
+                                    </div>
+
+                                    <div class="content-right">
+                                        <div>阵雨转阴</div>
+                                        <div>24/30℃</div>
+                                        <div style="color: #bbb;">微风&lt;2级 </div>
+                                    </div>
+                                </div>
+                            </header>
+
+                            <footer>
+                                <label class="item">
+                                    <div>周五</div>
+                                    <img src="img/baoyu.png" title="暴雨转大阵雨"/>
+                                    <div>23/17℃</div>
+                                </label>
+
+                                <label class="item">
+                                    <div>周六</div>
+                                    <img src="img/zhenyu.png" title="阵雨转多云"/>
+                                    <div>24/27℃</div>
+                                </label>
+
+                                <label class="item">
+                                    <div>周日</div>
+                                    <img src="img/zhenyu.png" title="阵雨转多云"/>
+                                    <div>25/29℃</div>
+                                </label>
+                            </footer>
                         </div>
                     </span>
                 </li>
+
                 <li>
                     <a href="">显示卡片</a>
                 </li>
@@ -73,7 +114,8 @@
                 <li>
                     <button class="sign-in">登录</button>
                 </li>
-                <li>
+
+                <li> <!-- 菜单 -->
                     <span>
                         <div class="menu">
                             <a href="">个性设置</a>
@@ -98,6 +140,7 @@
                 <input type="text" name="search" tabindex="0"/>
                 <label class="search"></label>
 
+                <!-- 提示索引 -->
                 <div class="list">
                     <p>今日热词</p>
 
@@ -166,9 +209,7 @@
                 </div>
 
             </form>
-
         </div>
-
     </section>
 
     <!-- 页尾  -->
@@ -181,16 +222,18 @@
             <a href="">意见反馈</a>
         </p>
 
-        <p>
+        <p> <!-- 版权信息 -->
             <span>© 2016 SOGOU - </span>
             <a href="">京ICP证xxxxxx号</a>
             <span> - </span>
             <a href="">京公网安备11000002000025号</a>
         </p>
 
+        <!-- 二维码 -->
         <div class="qrcode-box">
             <div class="qrcode"></div>
         </div>
+
     </footer>
 
 </body>

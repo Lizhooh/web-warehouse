@@ -1,161 +1,141 @@
 @charset "UTF-8";
 section.main {
-    font: inherit;
-    /* 水平，垂直居中 */
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    padding: 10px;
-    width: 700px;
-    height: 550px;
-    box-sizing: border-box;
+  font: inherit;
+  /* 水平，垂直居中 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 10px;
+  width: 700px;
+  height: 550px;
+  box-sizing: border-box;
 }
-
 section.main > .soguo {
-    margin: 5px auto;
-    padding-right: 80px;
+  margin: 5px auto;
+  padding-right: 80px;
 }
-
 section.main > .soguo > .logo {
-    /* logo */
-    margin-left: 80px;
-    text-align: center;
+  /* logo */
+  margin-left: 80px;
+  text-align: center;
 }
-
 section.main > .soguo > form {
-    /* 表单部分 */
-    margin: 5px auto;
-    text-align: center;
-    /* 搜索按钮 */
+  /* 表单部分 */
+  margin: 5px auto;
+  text-align: center;
+  /* 搜索按钮 */
 }
-
 section.main > .soguo > form input[type=text][name=search] {
-    /* 搜索框 */
-    font: inherit;
-    padding: 10px;
-    height: 25px;
-    width: 520px;
-    outline: none;
-    border: 1px solid #ccc;
-    border-right: none;
-    /* 过渡 */
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  /* 搜索框 */
+  font: inherit;
+  padding: 10px;
+  height: 25px;
+  width: 520px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-right: none;
+  /* 过渡 */
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
-
 section.main > .soguo > form input[type=text][name=search]:hover {
-    -webkit-box-shadow: 0 0 1px #aaa;
-    -moz-box-shadow: 0 0 1px #aaa;
-    box-shadow: 0 0 1px #aaa;
-    /* 阴影  */
-    border: 1px solid #aaa;
-    border-right: none;
+  -webkit-box-shadow: 0 0 1px #aaa;
+  -moz-box-shadow: 0 0 1px #aaa;
+  box-shadow: 0 0 1px #aaa;
+  /* 阴影  */
+  border: 1px solid #aaa;
+  border-right: none;
 }
-
 section.main > .soguo > form input[type=text][name=search]:focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border: 1px solid rgba(255, 60, 0, 0.8);
-    border-right: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid rgba(255, 60, 0, 0.8);
+  border-right: none;
 }
-
 section.main > .soguo > form input[type=text][name=search]:focus ~ .list {
-    display: block;
+  display: block;
 }
-
 section.main > .soguo > form label.search {
-    position: relative;
+  position: relative;
 }
-
 section.main > .soguo > form label.search::after {
-    content: "";
-    position: absolute;
-    top: -14px;
-    right: -80px;
-    width: 80px;
-    height: 47px;
-    border-radius: 0 4px 4px 0;
-    background: url("../img/search.png") center no-repeat;
-    background-color: rgba(255, 60, 0, 0.8);
-    color: white;
+  content: "";
+  position: absolute;
+  top: -13px;
+  right: -80px;
+  width: 80px;
+  height: 47px;
+  border-radius: 0 4px 4px 0;
+  background: url("../img/search.png") center no-repeat;
+  background-color: rgba(255, 60, 0, 0.8);
+  color: white;
 }
-
 section.main > .soguo > form label.search:hover::after {
-    -webkit-box-shadow: 0 1px 1px rgba(255, 60, 0, 0.9);
-    -moz-box-shadow: 0 1px 1px rgba(255, 60, 0, 0.9);
-    box-shadow: 0 1px 1px rgba(255, 60, 0, 0.9);
-    background-color: rgba(255, 60, 0, 0.9);
+  -webkit-box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
+  -moz-box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
+  box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
+  background-color: rgba(255, 60, 0, 0.9);
 }
-
 section.main > .soguo > form .list {
-    /* 新闻列表 */
-    display: none;
-    font: inherit;
-    font-size: 14px;
-    text-align: left;
-    margin: 0 auto;
-    padding: 0 10px 5px;
-    width: 540px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-top: none;
-    /* */
+  /* 新闻列表 */
+  display: none;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 10px 5px;
+  width: 540px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-top: none;
+  /* */
 }
-
 section.main > .soguo > form .list p:first-of-type {
-    margin: 0;
-    padding: 5px 0 0;
-    color: #aaa;
+  margin: 0;
+  padding: 5px 0 0;
+  color: #aaa;
 }
-
 section.main > .soguo > form .list ul {
-    list-style: none;
-    margin: 0;
-    padding: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
 }
-
 section.main > .soguo > form .list .item {
-    padding: 4px 0;
-    cursor: pointer;
+  padding: 4px 0;
+  cursor: pointer;
 }
-
 section.main > .soguo > form .list .item span {
-    font: inherit;
-    font-size: 13px;
-    border-radius: 3px;
-    color: white;
+  font: inherit;
+  font-size: 13px;
+  border-radius: 3px;
+  color: white;
 }
-
 section.main > .soguo > form .list .item span:first-of-type {
-    /* 数字 */
-    text-align: center;
-    padding: 2px 5px;
-    width: 10px;
-    height: 15px;
-    display: inline-block;
-    background-color: rgba(255, 60, 0, 0.8);
+  /* 数字 */
+  text-align: center;
+  padding: 2px 5px;
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  background-color: rgba(255, 60, 0, 0.8);
 }
-
 section.main > .soguo > form .list .item span.tag:last-of-type {
-    padding: 0 5px;
-    background-color: limegreen;
+  padding: 0 5px;
+  background-color: limegreen;
 }
-
 section.main > .soguo > form .list .item:hover {
-    background-color: rgba(245, 245, 220, 0.4);
+  background-color: rgba(245, 245, 220, 0.4);
 }
-
 section.main > .soguo > form .list .item:nth-child(n + 4) span:first-of-type {
-    /* 大于3的索引 */
-    background-color: #bbb;
+  /* 大于3的索引 */
+  background-color: #bbb;
 }
-
 
 /*# sourceMappingURL=search.css.map */

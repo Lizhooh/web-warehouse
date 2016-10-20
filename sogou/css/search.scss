@@ -74,7 +74,7 @@ section.main{
             label.search::after {
                 content: "";
                 position: absolute;
-                top: -14px;
+                top: -13px;
                 right: -80px;
                 width: 80px;
                 height: 47px;
@@ -85,9 +85,9 @@ section.main{
             }
 
             label.search:hover::after {
-                -webkit-box-shadow: 0 1px 1px $colorHover;
-                -moz-box-shadow: 0 1px 1px $colorHover;
-                box-shadow: 0 1px 1px $colorHover;
+                -webkit-box-shadow: 0 0 3px $colorHover;
+                -moz-box-shadow: 0 0 3px $colorHover;
+                box-shadow: 0 0 3px $colorHover;
 
                 background-color: $colorHover;
             }

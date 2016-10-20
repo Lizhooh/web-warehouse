@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html, body {
-  font: normal 15px 'consolas', "microsoft yahei", "arial, helvetica, sans-serif";
+  font: normal 15px "microsoft yahei", "arial, helvetica, sans-serif";
   position: relative;
   width: 100%;
   height: 100%;
@@ -20,7 +20,14 @@ a {
 }
 
 a.red:hover {
-  color: rgba(255, 0, 0, 0.8);
+  color: rgba(255, 0, 0, 0.8) !important;
+}
+
+.nav-left .more, .nav-right li:first-of-type .tianqi, .nav-right li:last-of-type .menu {
+  /* 淡淡的阴影 */
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-left {
@@ -100,9 +107,6 @@ a.red:hover {
   width: 60px;
   height: auto;
   padding: 0;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .nav-left .more > a {
   display: block;
@@ -119,7 +123,82 @@ a.red:hover {
 .nav-right li:first-of-type {
   /* 天气 */
   border-right: 1px solid #ddd;
+  padding: 0 8px;
+  position: relative;
+}
+.nav-right li:first-of-type .tianqi {
+  /* 天气面板 */
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  width: 240px;
+  height: 0;
+  padding: 10px;
+  margin: 0;
+  background-color: white;
+  cursor: pointer;
+  z-index: 5;
+  /* */
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.nav-right li:first-of-type .tianqi > header .content {
+  /* 详细天气 */
+  height: 120px;
+  margin-top: 5px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-right li:first-of-type .tianqi > header .content > div {
+  box-sizing: border-box;
+  flex: 1.0;
+}
+.nav-right li:first-of-type .tianqi > header .content > .content-left {
+  text-align: center;
   padding: 0 10px;
+}
+.nav-right li:first-of-type .tianqi > header .content > .content-right {
+  text-align: center;
+}
+.nav-right li:first-of-type .tianqi > header .content > .content-right > div {
+  padding: 2px 0;
+}
+.nav-right li:first-of-type .tianqi > header .content:hover {
+  background-color: #f1f1f1;
+}
+.nav-right li:first-of-type .tianqi > footer {
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  display: -webkit-flex;
+}
+.nav-right li:first-of-type .tianqi > footer > .item {
+  flex: 1.0;
+  height: 100%;
+  padding: 10px 0 0;
+}
+.nav-right li:first-of-type .tianqi > footer > .item:hover {
+  background-color: #f1f1f1;
+}
+.nav-right li:first-of-type .tianqi > footer > .item > img {
+  padding: 5px 0 3px;
+}
+.nav-right li:first-of-type:hover {
+  height: 30px;
+}
+.nav-right li:first-of-type:hover .tianqi {
+  opacity: 1;
+  height: 260px;
 }
 .nav-right li {
   margin: 0 5px;
@@ -132,6 +211,13 @@ a.red:hover {
   color: white;
   border-radius: 4px;
   padding: 2px 10px;
+  cursor: pointer;
+}
+.nav-right li > .sign-in:hover {
+  background-color: rgba(255, 60, 0, 0.9);
+  -webkit-box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
+  -moz-box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
+  box-shadow: 0 0 3px rgba(255, 60, 0, 0.9);
 }
 .nav-right li:last-of-type {
   /* 菜单 */
@@ -165,9 +251,6 @@ a.red:hover {
   top: 50px;
   right: 10px;
   width: 80px;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   -webkit-transform: translateX(200%);
   -moz-transform: translateX(200%);
   -ms-transform: translateX(200%);
