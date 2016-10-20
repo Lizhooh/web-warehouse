@@ -4,119 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title></title>
+    <title>js-animate</title>
 
-    <style>
-        html, body {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            background-color: white;
-        }
-
-        .box {
-            position: absolute;
-            top: 100px; left: 100px;
-            width: 70px;
-            height: 70px;
-            background-color: dodgerblue;
-            box-shadow: 0px 0px 3px dodgerblue;
-            border-radius: 3px;
-
-            -webkit-transform: rotateZ(0);
-            -moz-transform: rotateZ(0);
-            -ms-transform: rotateZ(0);
-            -o-transform: rotateZ(0);
-            transform: rotateZ(0);
-        }
-
-        .button {
-            font: 20px "consolas", "microsoft yahei", "arial, helvetica, sans-serif";
-            margin: 20px;
-            background-color: orange;
-            border: 1px solid orange;
-            box-shadow: 0px 0px 3px orange;
-            border-radius: 3px;
-            color: white;
-            padding: 0.5em 1.8em;
-            outline: orange;
-        }
-
-        .button:hover {
-            opacity: 0.8;
-        }
-
-        .button:active {
-            opacity: 1;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 
-    <div class="box" id="box"></div>
+    <div class="box"></div>
+    <div class="box" id="box1"></div>
+    <div class="box2" id="box2">Good</div>
+
     <button class="button" id="btn">Go</button>
+
 
     <!-- 动画库 -->
     <script src="js/animate.js"></script>
 
-    <script>
-
-        var box = $$('.box')[0];
-        var k = -1;
-
-        $$('.button')[0].onclick = function(event) {
-
-            if($$.animate) return;
-
-            var spend = 700;
-            var run   = 260;
-
-            switch(k = ++k % 7) {
-                case 0: {
-                    box.moveTo(run, 0, spend);
-                    break;
-                }
-                case 1: {
-                    box
-                        .moveTo(0, run, spend)
-                        .opacityTo(0.2, spend)
-                        .bgColorTo('rgba(235, 24, 40, 0.8)', 1000);
-                    break;
-                }
-                case 2: {
-                    box.moveTo(-run, 0, spend);
-                    break;
-                }
-                case 3: {
-                    box.moveTo(0, -run, spend);
-                    break;
-                }
-                case 4: {
-                    box
-                        .opacityTo(1, 1000, false, function() {
-                            this.moveTo(run, run, spend);
-                        })
-                    break;
-                }
-                case 5: {
-                    box
-                        .moveTo(-run, 0, spend)
-                        .opacityTo(0.6, spend, true)
-                        .bgColorTo('rgba(30, 144, 255, 1)', 1000);
-                    break;
-                }
-                case 6: {
-                    box
-                        .moveTo(0, -run, spend)
-                        .opacityTo(1, spend, true);
-                    break;
-                }
-            }
-        };
-
-    </script>
+    <!-- app -->
+    <script src="js/app.js"></script>
 </body>
 </html>

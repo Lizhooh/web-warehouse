@@ -1,0 +1,160 @@
+
+$colorHover: rgba(255, 60, 0, 0.9);
+$color: rgba(255, 60, 0, 0.8);
+
+section.main{
+    font: inherit;
+    /* 水平，垂直居中 */
+    position: absolute;
+    top: 0; bottom: 0; right: 0; left: 0;
+    margin: auto;
+    padding: 10px;
+    width: 700px;
+    height: 550px;
+
+    box-sizing: border-box;
+
+    > .soguo {
+        margin: 5px auto;
+        padding-right: 80px;
+
+        > .logo {   /* logo */
+            margin-left: 80px;
+            text-align: center;
+        }
+
+        > form {    /* 表单部分 */
+            margin: 5px auto;
+            text-align: center;
+
+            input[type=text][name=search] { /* 搜索框 */
+                font: inherit;
+                padding: 10px;
+                height: 25px;
+                width: 520px;
+                outline: none;
+                border: 1px solid #ccc;
+                border-right: none;
+                /* 过渡 */
+                -webkit-transition: all 0.1s ease-in-out;
+                -moz-transition: all 0.1s ease-in-out;
+                -ms-transition: all 0.1s ease-in-out;
+                -o-transition: all 0.1s ease-in-out;
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    -webkit-box-shadow: 0 0 1px #aaa;
+                    -moz-box-shadow: 0 0 1px #aaa;
+                    box-shadow: 0 0 1px #aaa;
+                    /* 阴影  */
+
+                    border: 1px solid #aaa;
+                    border-right: none;
+                }
+
+                &:focus {
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+
+                    border: 1px solid $color;
+                    border-right: none;
+                }
+
+                &:focus ~ .list {
+                    display: block;
+                }
+            }
+
+            /* 搜索按钮 */
+            label.search {
+                position: relative;
+            }
+
+            label.search::after {
+                content: "";
+                position: absolute;
+                top: -14px;
+                right: -80px;
+                width: 80px;
+                height: 47px;
+                border-radius: 0 4px 4px 0;
+                background: url("../img/search.png") center no-repeat;
+                background-color: $color;
+                color: white;
+            }
+
+            label.search:hover::after {
+                -webkit-box-shadow: 0 1px 1px $colorHover;
+                -moz-box-shadow: 0 1px 1px $colorHover;
+                box-shadow: 0 1px 1px $colorHover;
+
+                background-color: $colorHover;
+            }
+
+            .list { /* 新闻列表 */
+                display: none;
+                font: inherit;
+                font-size: 14px;
+                text-align: left;
+                margin: 0 auto;
+                padding: 0 10px 5px;
+                width: 540px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-top: none;
+                /* */
+
+                p:first-of-type {
+                    margin: 0;
+                    padding: 5px 0 0;
+                    color: #aaa;
+                }
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 5px;
+                }
+
+                .item {
+                    padding: 4px 0;
+                    cursor: pointer;
+
+                    span {
+                        font: inherit;
+                        font-size: 13px;
+                        border-radius: 3px;
+                        color: white;
+                    }
+                    span:first-of-type { /* 数字 */
+                        text-align: center;
+                        padding: 2px 5px;
+                        width: 10px;
+                        height: 15px;
+                        display: inline-block;
+                        background-color: $color;
+                    }
+                    span.tag:last-of-type {
+                        padding: 0 5px;
+                        background-color: limegreen;
+                    }
+
+                    &:hover {
+                        background-color: rgba(245, 245, 220, 0.4);
+                    }
+                }
+
+                .item:nth-child(n + 4) {
+                    span:first-of-type { /* 大于3的索引 */
+                        background-color: #bbb;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+

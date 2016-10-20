@@ -7,3 +7,4 @@ web-warehouse | web 项目仓库
 ### js-animate: 原生js动画
 ### Qrcode: web二维码
 ### ZhiHu-Sign: 仿知乎登录页面
+### sogou: 仿搜狗搜索页面

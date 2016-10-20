@@ -27,13 +27,12 @@ var $$ = (function(undefined) {
     };
 
     /**
-     * 进制装换
+     * 16进制转10
      * @param{Number} num
-     * @param{Number} n: 原来的进制
      * @return{Number/String}
      */
-    var conver = function(num, n) {
-        return parseInt(num, n);
+    var hex = function(num) {
+        return parseInt(num);
     };
 
     /**
@@ -73,6 +72,18 @@ var $$ = (function(undefined) {
      */
     var isIE = function() {
         return !!window.ActiveXObject || "ActiveXObject" in window;
+    };
+
+    /**
+     *  兼容性处理，获取元素属性值
+     */
+    var css = function(node, name) {
+        if(isIE()) {
+            return node.currentStyle[name];
+        }
+        else {
+            return getComputedStyle(node, null)[name];
+        }
     };
 
 
@@ -120,8 +131,8 @@ var $$ = (function(undefined) {
                     // 初始化一些值
                     if(i == 0) {
                         node.style.position = 'absolute';
-                        lenX = int(getComputedStyle(node, null).left);
-                        lenY = int(getComputedStyle(node, null).top);
+                        lenX = int(css(node, 'left'));
+                        lenY = int(css(node, 'top'));
                         _$.animate = true;
                     }
 
@@ -161,12 +172,12 @@ var $$ = (function(undefined) {
                         node.style[core + 'transition'] = '';
                         node.style[core + 'transform']  = '';
 
-                        node.style.left = int(getComputedStyle(node, null).left) + x + 'px';
-                        node.style.top  = int(getComputedStyle(node, null).top)  + y + 'px';
+                        node.style.left = int(css(node, 'left')) + x + 'px';
+                        node.style.top  = int(css(node, 'top'))  + y + 'px';
 
                         _$.animate = false;
                         callback();
-                    }, spend + 10);
+                    }, spend + 50);
                 };
 
             // 不支持css3使用 _
@@ -249,13 +260,14 @@ var $$ = (function(undefined) {
                     // 清空状态
                     node.style[core + 'transition'] = '';
 
+                    // 是否需要隐藏
                     if(start === true && number === 0) {
                         node.display = 'none';
                     }
 
                     _$.animate = false;
                     callback();
-                }, spend + 10);
+                }, spend + 50);
             };
 
             // 不支持css3使用 _
@@ -280,8 +292,17 @@ var $$ = (function(undefined) {
 
             // setDt
             (function(undefined) {
-                var oldColor = getComputedStyle(node).backgroundColor;
 
+                var oldColor = css(node, 'backgroundColor');
+                var r, g, b, a;
+
+                /**
+                 * rgba(1, 2, 3, 1) =>
+                 *  r = 1
+                 *  g = 2
+                 *  b = 3
+                 *  a = 1
+                 */
                 var getRGBA = function(oldColor, name) {
                     var str = null;
                     if(oldColor.substr(0, 4) === 'rgba') {
@@ -301,18 +322,18 @@ var $$ = (function(undefined) {
                     return arr[ na[name] ].trim();
                 };
 
-
+                /**
+                 * 旧的颜色值
+                 */
                 or = int(getRGBA(oldColor, 'r')),
                 og = int(getRGBA(oldColor, 'g')),
                 ob = int(getRGBA(oldColor, 'b')),
                 oa = float(getRGBA(oldColor, 'a'));
 
-                var r, g, b, a;
-
                 if(color[0] === '#') {
-                    r = conver(color.substr(1, 2), 16),
-                    g = conver(color.substr(3, 2), 16),
-                    b = conver(color.substr(5, 2), 16),
+                    r = hex(color.substr(1, 2)),
+                    g = hex(color.substr(3, 2)),
+                    b = hex(color.substr(5, 2)),
                     a  = 1.0;
                 }
                 if(color.substr(0, 3) === 'rgb') {
@@ -395,13 +416,80 @@ var $$ = (function(undefined) {
 
                     _$.animate = false;
                     callback();
-                }, spend + 10);
+                }, spend + 50);
             };
 
             // 不支持css3使用 _
             core === false ? _colors() : colors();
         };
 
+
+        /**
+         * css3 动画引擎
+         * - 使用
+         * - element.animate(attr, callback);
+         * @param{Object} attr: 属性对象, 以  key: value 形式出现
+         * @param{Function} callback: 回调函数
+         * @return{Element} this
+         */
+
+        var animate = function(attr, spend, callback) {
+            var node = this;
+            spend = spend || 600;
+
+            var attrArray  = [],
+                valueArray = [];
+
+
+            var setAttr = function(key) {
+                var keyarr = key.split('-');
+
+                key = keyarr[0];
+                for(var j=1; j<keyarr.length; j++) {
+                   key += keyarr[j][0].toUpperCase() + keyarr[j].substr(1);
+                }
+
+                return key;
+            };
+
+            for(var key in attr) {
+                setAttr(key);
+                attrArray.push(key);
+                valueArray.push(attr[key]);
+            }
+
+            // has css3
+            if(core !== false) {
+                if(!node.style[core + 'transition']) {
+                    node.style[core + 'transition'] = "all " + spend + "ms " + buffer;
+                }
+
+                var sty = document.body.style;
+
+                for(var i in attrArray) {
+                    if(attrArray[i] in sty) {
+                        node.style[ attrArray[i] ] = valueArray[i];
+                    }
+                    else {
+                        console.log('not has ' + attrArray[i]);
+                    }
+                }
+
+                _$.animate = true;
+
+                // 动画结束
+                setTimeout(function() {
+                    node.style[core + 'transition'] = '';
+
+                    _$.animate = false;
+                    callback();
+                }, spend + 50);
+            }
+            else {
+                throw new Error("Your browser does not support css3.");
+            }
+
+        };
 
         /**
          * html 所有结点都继承至 Element , Element 继承至 Object
@@ -438,6 +526,7 @@ var $$ = (function(undefined) {
          * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
          * @param{Boolean} start: 透明度为0时，是否隐藏结点, 可选，默认false
          * @param{Function} callback: 回调函数
+         * @return{Element} this
          */
         element.prototype.opacityTo = function(number, spend, start, callback) {
             callback = callback || function() {};
@@ -449,15 +538,32 @@ var $$ = (function(undefined) {
         /**
          * 颜色引擎
          * - 使用
-         * - element.colorTo(color, spend, callback);
+         * - element.colorTo(color, [spend], [callback]);
          * @param{String} color: rgba颜色值或十六进制颜色值
          * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
          * @param{Function} callback: 回调函数
+         * @return{Element} this
          */
         element.prototype.bgColorTo = function(color, spend, callback) {
             callback = callback || function() {};
 
             bgColorTo.call(this, color, spend, callback.bind(this));
+            return this;
+        };
+
+        /**
+         * css3 动画引擎
+         * - 使用
+         * - element.animate(attr, [spend], [callback]);
+         * @param{Object} attr: 属性对象, 以  key: value 形式出现
+         * @param{Number} spend: 动画时间. 可选, 默认600, 单位 ms
+         * @param{Function} callback: 回调函数
+         * @return{Element} this
+         */
+        element.prototype.animate = function(attr, spend, callback) {
+            callback = callback || function() {};
+
+            animate.call(this, attr, spend, callback.bind(this));
             return this;
         };
 
