@@ -1,45 +1,6 @@
 
 $colorBlue: #12b7f5;
 
-
-html, body {
-    font: normal 15px "microsoft yahei", arial;
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 1200px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: white;
-}
-
-a {
-    font: 15px "microsoft yahei";
-    text-decoration: none;
-    color: #444;
-}
-
-.left {
-    float: left !important;
-}
-
-.right {
-    float: right !important;
-}
-
-ul {
-    font: inherit;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        display: block;
-        float: left;
-        margin: 0;
-    }
-}
-
 .header {
     font: inherit;
     margin: 0;

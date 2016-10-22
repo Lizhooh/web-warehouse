@@ -1,0 +1,151 @@
+@charset "UTF-8";
+.bg-Girl {
+  background: transparent url("../img/bg1.jpg") no-repeat center top fixed;
+}
+
+.bg-Notebook {
+  background: transparent url("../img/bg2.jpg") no-repeat center top fixed;
+}
+
+.bg-Boy {
+  background: transparent url("../img/bg3.jpg") no-repeat center top fixed;
+}
+
+.main .bg {
+  width: 100%;
+  height: 620px;
+  overflow: hidden;
+  z-index: 0;
+}
+.main .box {
+  position: relative;
+  margin: 0 auto;
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  z-index: 1;
+}
+.main .box header {
+  margin: 0 auto;
+  margin-top: 120px;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+.main .box > .msg {
+  /* 共同属性 */
+  width: 500px;
+  height: 100%;
+  float: right;
+}
+.main .box > .msg .content {
+  padding: 10px 0;
+}
+.main .box > .msg .content .text {
+  margin: 0 5px 5px 0;
+  text-align: right;
+  font-size: 18px;
+  color: #999;
+  /* 设置字之间的间距 */
+  letter-spacing: 3px;
+}
+.main .box > .msg .content a {
+  margin: 15px 0;
+  float: right;
+  font-size: 18px;
+  color: #12b7f5;
+}
+.main .box > .msg .content ul.list {
+  margin: 0;
+  padding-top: 20px;
+}
+.main .box > .msg .content ul.list li {
+  color: #999;
+  text-align: center;
+  float: right;
+  padding: 60px 20px 0 25px;
+  border-right: 1px solid #e6e6e6;
+}
+.main .pic1 {
+  /* pic1 */
+}
+.main .pic1 > .qAnimate {
+  /* 熊孩子电话 */
+  position: absolute;
+  left: -50px;
+  bottom: 0;
+  width: 664px;
+  height: 763px;
+  background: transparent url("../img/pic1.png") no-repeat 0 0;
+}
+.main .pic1 > .msg {
+  float: right;
+}
+.main .pic1 > .msg header {
+  background: transparent url("../img/qcall_txt.png") no-repeat 0 0;
+}
+.main .pic1 > .msg .content ul.list {
+  background: transparent url("../img/qcall_figs.png") no-repeat 182px 20px;
+}
+.main .pic2 {
+  /* pic2 */
+}
+.main .pic2 > .qAnimate {
+  /* 小笔记本 */
+  position: absolute;
+  right: -100px;
+  bottom: 104px;
+  width: 597px;
+  height: 330px;
+  background: transparent url("../img/pic2.png") no-repeat 0 0;
+}
+.main .pic2 > .msg {
+  float: left;
+}
+.main .pic2 > .msg header {
+  background: transparent url("../img/qfile_txt.png") no-repeat 0 0;
+}
+.main .pic2 > .msg .content .text {
+  text-align: left;
+}
+.main .pic2 > .msg .content a {
+  float: left;
+}
+.main .pic2 > .msg .content ul.list {
+  background: transparent url("../img/qfile_figs.png") no-repeat 18px 20px;
+}
+.main .pic2 > .msg .content ul.list li {
+  float: left;
+}
+.main .pic3 {
+  /* pic3 */
+}
+.main .pic3 > .qAnimate {
+  /* 兴趣部落 */
+  position: absolute;
+  left: 88px;
+  bottom: 0;
+  width: 344px;
+  height: 506px;
+  background: transparent url("../img/pic3.png") no-repeat 0 0;
+}
+.main .pic3 > .msg {
+  float: right;
+}
+.main .pic3 > .msg header {
+  background: transparent url("../img/qblog_txt.png") no-repeat 0 0;
+}
+.main .pic3 > .msg .content .text {
+  text-align: right;
+}
+.main .pic3 > .msg .content a {
+  float: right;
+}
+.main .pic3 > .msg .content ul.list {
+  background: transparent url("../img/qblog_figs.png") no-repeat 210px 20px;
+}
+.main .pic3 > .msg .content ul.list li {
+  float: right;
+}
+
+/*# sourceMappingURL=main.css.map */

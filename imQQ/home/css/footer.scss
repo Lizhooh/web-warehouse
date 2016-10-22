@@ -1,0 +1,152 @@
+
+$colorBlue: #12b7f5;
+
+.footer {
+    width: 100%;
+    height: 380px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #aaa;
+    font-size: 13px;
+
+    > section {
+        margin: 0 auto;
+        width: 1000px;
+        height: 100%;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .left {
+
+        p {
+            color: #777;
+            margin: 10px 20px 30px;
+        }
+
+        ul { /* qq各版本 */
+
+            li {
+                padding: 65px 10px 10px;
+                margin: 0 15px;
+                text-align: center;
+                font-size: 14px;
+
+                /**/
+                -webkit-transition: background 0.3s ease-in-out;
+                -moz-transition: background 0.3s ease-in-out;
+                -ms-transition: background 0.3s ease-in-out;
+                -o-transition: background 0.3s ease-in-out;
+                transition: background 0.3s ease-in-out;
+
+                a {
+                    color: inherit;
+
+                    &:hover {
+                        color: $colorBlue;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    > a {
+                        color: $colorBlue;
+                    }
+                }
+            }
+
+            li:nth-child(1) {
+                background: transparent url("../img/plats.png") no-repeat 10px 0;
+
+                &:hover {
+                    background: transparent url("../img/plats.png") no-repeat 10px -93px;
+                }
+            }
+
+            li:nth-child(2) {
+                background: transparent url("../img/plats.png") no-repeat -105px 0;
+
+                &:hover {
+                    background: transparent url("../img/plats.png") no-repeat -105px -93px;
+                }
+            }
+
+            li:nth-child(3) {
+                background: transparent url("../img/plats.png") no-repeat -205px 0;
+
+                &:hover {
+                    background: transparent url("../img/plats.png") no-repeat -205px -93px;
+                }
+            }
+
+            li:nth-child(4) {
+                background: transparent url("../img/plats.png") no-repeat -320px 0;
+
+                &:hover {
+                    background: transparent url("../img/plats.png") no-repeat -320px -93px;
+                }
+            }
+
+        }
+    }
+
+    .right {
+        margin: 0;
+        padding: 0;
+
+        ul.list-x { /* 水平列表 */
+
+            li {
+                margin: 0 12px;
+            }
+        }
+
+        ul.list-y { /* 垂直列表 */
+
+            li {
+                float: none;
+                padding: 1px 0;
+
+                a {
+                    font-size: 12px;
+                    color: inherit;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+
+            li:nth-child(1) {
+                margin: 10px;
+                color: #777;
+            }
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: #666;
+        margin-top: 220px;
+    }
+
+    .copyRight {
+        text-align: center;
+
+        p {
+            font-size: 12px;
+        }
+
+        p:first-of-type {
+            margin-bottom: 4px;
+        }
+
+        p:last-of-type {
+            margin: 4px 0;
+        }
+    }
+}
+
+
+

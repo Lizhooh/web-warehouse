@@ -1,0 +1,77 @@
+$colorBlue: #12b7f5;
+
+html, body {
+    font: normal 15px "microsoft yahei", arial;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1200px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+a {
+    font: 15px "microsoft yahei";
+    text-decoration: none;
+    color: #444;
+}
+
+a:hover {
+    color: red;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+ul {
+    font: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clear: both;
+
+    li {
+        display: block;
+        float: left;
+        margin: 0;
+    }
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
