@@ -1,6 +1,5 @@
 
 $colorBlue: #12b7f5;
-$all-width: 1000px;
 
 .footer {
     width: 100%;
@@ -11,7 +10,7 @@ $all-width: 1000px;
 
     > section {
         margin: 0 auto;
-        width: $all-width;
+        width: 1000px;
         height: 100%;
         padding: 30px;
         box-sizing: border-box;

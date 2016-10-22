@@ -1,3 +1,4 @@
+$all-width: 1000px;
 
 .bg-Girl {
     background: transparent url("../img/bg1.jpg") no-repeat center top fixed;
@@ -23,7 +24,7 @@
     .box {
         position: relative;
         margin: 0 auto;
-        width: 1000px;
+        width: $all-width;
         height: 600px;
         background-color: white;
         z-index: 1;

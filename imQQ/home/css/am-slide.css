@@ -128,6 +128,7 @@
   max-height: 860px;
   background: transparent url("../img/am1.jpg") center center no-repeat;
   background: transparent url("../img/am2.jpg") center center no-repeat;
+  background-size: cover;
   /**/
   -webkit-transition: height 2s ease-in-out;
   -moz-transition: height 0.3s ease-in-out;

@@ -1,0 +1,198 @@
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 60px 0;
+  background-color: white;
+}
+
+.piece {
+  margin: 0 auto;
+  width: 100%;
+}
+.piece > .title {
+  font-size: 18px;
+  color: #888;
+  margin: 0 0 20px;
+}
+
+.one {
+  margin-bottom: 40px;
+}
+.one .box:last-child {
+  border-right: 1px solid #ddd;
+}
+.one .list-x {
+  margin: 0 auto;
+}
+.one .box {
+  height: 455px;
+  padding: 0 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+.one .box > a {
+  display: block;
+  height: 175px;
+  width: 325px;
+  text-align: center;
+}
+.one .box > a img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.one .box > section {
+  text-align: center;
+  padding: 15px 0 0;
+}
+.one .box > section .content ul {
+  padding: 15px;
+  height: 140px;
+}
+.one .box > section .content ul li {
+  text-align: left;
+  font-size: 14px;
+  color: #888;
+  padding: 4px 0;
+  float: none;
+}
+.one .box > section .content .download {
+  display: list-item;
+  float: left;
+  width: 50%;
+}
+.one .box > section .content .download .time {
+  color: #aaa;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+.one .box > section .content .download a {
+  background-color: #12b7f5;
+  color: white;
+  text-align: center;
+  padding: 0.4em 2.2em;
+  border-radius: 20px;
+}
+.one .box > section .content .download a:hover {
+  background-color: #12bff5;
+}
+.one .qq-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+.one .version {
+  cursor: pointer;
+  font-size: 14px;
+  color: #888;
+}
+.one .version:hover, .one .version.active {
+  color: #111;
+}
+.one .icon {
+  padding: 5px 15px;
+}
+.one .icon.android {
+  background: transparent url("../img/btn_icon_and.png") no-repeat center center;
+}
+.one .icon.pc {
+  background: transparent url("../img/btn_icon_pc.png") no-repeat center center;
+}
+.one .icon.ios {
+  background: transparent url("../img/btn_icon_ios.png") no-repeat center center;
+}
+
+.two {
+  margin-bottom: 40px;
+}
+.two .box:first-of-type ul li {
+  border-top: 1px solid #ddd;
+}
+.two .box ul li {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-right: none;
+  width: 50%;
+  height: 100px;
+}
+.two .box ul li > .download {
+  height: 100%;
+  text-align: center;
+  line-height: 100px;
+  padding: 0 20px;
+}
+.two .box ul li > .download a {
+  padding: 0.4em 1.8em;
+  color: white;
+  background-color: #12b7f5;
+  border-radius: 20px;
+}
+.two .box ul li > .download a:hover {
+  background-color: #12bff5;
+}
+.two .box ul li > .content {
+  padding: 25px 0 20px;
+}
+.two .box ul li > .content span:first-of-type {
+  font-weight: bold;
+  font-size: 17px;
+  color: #555;
+}
+.two .box ul li > .content span:last-of-type {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.two .box ul li > .content p {
+  margin: 5px 0;
+  color: #888;
+}
+.two .box ul li:last-child {
+  border-right: 1px solid #ddd;
+}
+.two .qq, .two .wp, .two .android, .two .mac {
+  display: block;
+  width: 90px;
+  height: 100%;
+}
+.two .icon.qq {
+  background: transparent url("../img/logo.png") no-repeat center center;
+}
+.two .icon.wp {
+  background: transparent url("../img/wp_icon.png") no-repeat center center;
+}
+.two .icon.android {
+  background: transparent url("../img/and_icon.png") no-repeat center center;
+}
+.two .icon.mac {
+  background: transparent url("../img/mac_icon.png") no-repeat center center;
+}
+
+.three .box {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+.three .box ul {
+  width: 100%;
+}
+.three .box ul li {
+  width: 210px;
+  margin: 20px;
+  padding: 0;
+  color: #444;
+  cursor: default;
+}
+.three .box ul li .top {
+  margin: 0;
+  font-size: 16px;
+}
+.three .box ul li .bottom {
+  margin: 12px 0 0;
+  color: #888;
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=main.css.map */
