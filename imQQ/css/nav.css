@@ -1,0 +1,154 @@
+@charset "UTF-8";
+html, body {
+  font: normal 15px "microsoft yahei", arial;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 1200px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+a {
+  font: 15px "microsoft yahei";
+  text-decoration: none;
+  color: #444;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+ul {
+  font: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  display: block;
+  float: left;
+  margin: 0;
+}
+
+.header {
+  font: inherit;
+  margin: 0;
+  padding: 0 0 20px;
+}
+.header nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  z-index: 5;
+}
+.header .imqq {
+  background: white url("../img/imqq.png") center top no-repeat;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 280px;
+}
+
+.nav {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  height: 100px;
+}
+.nav .logo {
+  margin: 6px 10px !important;
+  padding: 10px;
+  display: inline;
+  background-color: transparent !important;
+}
+.nav .menu {
+  width: 500px;
+}
+.nav .menu .menu-list {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  clear: both;
+}
+.nav .menu .menu-list li {
+  text-align: center;
+  margin: 0 10px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.nav .menu .menu-list li:nth-child(n + 2) {
+  height: 100%;
+  width: 80px;
+  line-height: 80px;
+}
+.nav .menu .menu-list li:nth-child(n + 2) a {
+  padding: 28px 16px;
+  font-size: 18px;
+  color: white;
+}
+.nav .menu .menu-list li:nth-child(n + 2):hover {
+  background-color: #12b7f5;
+}
+.nav .menu .menu-list .active {
+  background-color: #12b7f5;
+}
+.nav .menu .menu-list:hover {
+  /* 父元素影响子元素 */
+}
+.nav .menu .menu-list:hover li {
+  background-color: transparent;
+}
+.nav .menu .menu-list:hover li:hover {
+  background-color: #12b7f5;
+}
+.nav .other {
+  color: white;
+}
+.nav .other a {
+  color: white;
+}
+.nav .other .other-box {
+  padding: 15px;
+}
+.nav .other .other-box ul li:last-of-type {
+  margin: 3px 0 0 15px;
+}
+.nav .other .other-box ul li:last-of-type a {
+  margin: 0 15px 0 0;
+}
+.nav .other .other-box ul li:last-of-type a:hover {
+  color: #12b7f5;
+}
+.nav .other .sign-in {
+  cursor: pointer;
+  font: inherit;
+  background-color: #12b7f5;
+  border: none;
+  border-radius: 40px;
+  padding: 0.5em 1.8em;
+  color: white;
+  font-size: 17px;
+  outline: none;
+  margin: 5px 10px;
+}
+.nav .other .sign-in:hover {
+  background-color: #12bcf5;
+}
+.nav .other .number {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=nav.css.map */

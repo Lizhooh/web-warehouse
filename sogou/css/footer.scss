@@ -10,6 +10,12 @@ footer {
         margin: 4px auto;
     }
 
+    p:first-of-type {
+        a {
+            margin: 0 5px;
+        }
+    }
+
     p:last-of-type {
         color: #bbb;
 

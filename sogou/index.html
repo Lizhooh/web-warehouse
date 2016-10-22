@@ -132,76 +132,78 @@
     <section class="main">
 
         <div class="soguo">
+            <!-- logo -->
             <div class="logo">
                 <img src="img/logo_440x140.png" />
             </div>
 
-            <form name="form">
+            <!-- 表单 -->
+            <form name="form" onsubmit="sub()">
                 <input type="text" name="search" tabindex="0"/>
                 <label class="search"></label>
 
                 <!-- 提示索引 -->
-                <div class="list">
+                <div class="list" id="newList">
                     <p>今日热词</p>
 
                     <ul>
                         <li class="item">
                             <span>1</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球1</label>
                             <span class="tag">new</span>
                         </li>
 
                         <li class="item">
                             <span>2</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球2</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>3</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球3</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>4</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球4</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>5</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球5</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>6</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球6</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>7</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球7</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>8</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球8</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>9</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球9</label>
                             <span></span>
                         </li>
 
                         <li class="item">
                             <span>10</span>
-                            <label class="content">俄欧踏上红色星球</label>
+                            <label class="content">俄欧踏上红色星球10</label>
                             <span></span>
                         </li>
                     </ul>
@@ -222,7 +224,8 @@
             <a href="">意见反馈</a>
         </p>
 
-        <p> <!-- 版权信息 -->
+        <!-- 版权信息 -->
+        <p>
             <span>© 2016 SOGOU - </span>
             <a href="">京ICP证xxxxxx号</a>
             <span> - </span>
@@ -236,5 +239,42 @@
 
     </footer>
 
+    <script>
+
+        /**
+         * 实现搜索功能
+         */
+        (function(document, undefined) {
+
+            var $$ = function(select, content) {
+                content = content || document;
+
+                return Array.prototype.slice.call(
+                    content.querySelectorAll(select)
+                );
+            };
+
+            var list   = $$('.list#newList li.item'),
+                search = $$("input[name=search] + label.search")[0];
+
+            list.forEach(function(item, index, list) {
+                item.onclick = function(event) {
+                    var text = item.children[1].innerText;
+
+                    $$("input[name=search]")[0].value = text;
+                }
+            });
+
+            search.onclick = function(event) {
+                var value = $$("input[name=search]")[0].value;
+
+                if(!value) return;
+
+                location.href = 'https://www.sogou.com/web?ie=utf8&query=' + value;
+            };
+
+        })(document, undefined);
+
+    </script>
 </body>
 </html>

@@ -142,14 +142,14 @@ a.red:hover {
 
     li:first-of-type { /* 天气 */
         border-right: 1px solid #ddd;
-        padding: 0 8px;
+        padding: 0 15px;
         position: relative;
 
         & .tianqi {  /* 天气面板 */
             opacity: 0;
             overflow: hidden;
             position: absolute;
-            top: 30px; left: -30px;
+            top: 30px; left: -35px;
             width: 240px;
             height: 0;
             padding: 10px;
@@ -170,7 +170,7 @@ a.red:hover {
             > header {
                 .content { /* 详细天气 */
                     height: 120px;
-                    margin-top: 5px;
+                    margin-top: 8px;
                     display: flex;
                     display: -webkit-flex;
                     align-items: center;
@@ -264,10 +264,10 @@ a.red:hover {
         margin: 0;
         background-color: transparent;
         cursor: pointer;
-        padding: 3px 0;
+        padding: 3px 0 3px 5px;
 
         > span {
-            padding: 45px 40px;
+            padding: 40px;
             background: url("../img/menu.png") right no-repeat;
             background-size: 100%;
         }
@@ -278,7 +278,7 @@ a.red:hover {
             -ms-transform: translateX(0%);
             -o-transform: translateX(0%);
             transform: translateX(0%);
-
+            /* */
             -webkit-transition: all 0.2s ease-in-out;
             -moz-transition: all 0.2s ease-in-out;
             -ms-transition: all 0.2s ease-in-out;

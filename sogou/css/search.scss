@@ -73,6 +73,7 @@ section.main{
 
             label.search::after {
                 content: "";
+                cursor: pointer;
                 position: absolute;
                 top: -13px;
                 right: -80px;
@@ -149,6 +150,10 @@ section.main{
                     span:first-of-type { /* 大于3的索引 */
                         background-color: #bbb;
                     }
+                }
+
+                &:hover {
+                    display: block !important;
                 }
             }
         }

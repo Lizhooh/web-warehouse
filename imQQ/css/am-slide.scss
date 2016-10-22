@@ -1,0 +1,199 @@
+@import 'mixin/css3';
+
+
+$colorBlue: #12b7f5;
+$times: 15s;
+
+.bg {
+    position: relative;
+
+    button {
+        font: inherit;
+        font-size: 32px;
+        position: absolute;
+        border: none;
+        border-radius: 50px;
+        color: white;
+        z-index: 1;
+        outline: none;
+        cursor: pointer;
+    }
+
+    button.blue {
+        left: 22%;
+        bottom: 15%;
+        background-color: $colorBlue;
+        padding: 0.5em 10vh;
+    }
+}
+
+
+.circle {
+    cursor: pointer !important;
+    position: absolute;
+    bottom: 30px; left: 50%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color:  transparent;
+    z-index: 1;
+
+    /**/
+    -webkit-transition: height 0.3s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+    /**/
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+    transform: rotateZ(0);
+    /**/
+}
+
+.cir1 {
+    left: calc(50% - 20px);
+
+    -webkit-animation: cir1 $times ease-in-out 0s infinite;
+    -moz-animation: cir1 $times ease-in-out 0s infinite;
+    -ms-animation: cir1 $times ease-in-out 0s infinite;
+    animation: cir1 $times ease-in-out 0s infinite;
+
+    @at-root {
+        /* 动画帧定义 */
+        @keyframes cir1{
+            0%{
+                background-color: white;
+            }
+            40% {
+                background-color: white;
+            }
+            50%{
+                background-color:  transparent;
+            }
+            90% {
+                background-color:  transparent;
+            }
+            100% {
+                background-color: white;
+            }
+        }
+    }
+}
+
+.cir2 {
+    left: calc(50% + 20px);
+
+    -webkit-animation: cir2 $times ease-in-out 0s infinite;
+    -moz-animation: cir2 $times ease-in-out 0s infinite;
+    -ms-animation: cir2 $times ease-in-out 0s infinite;
+    animation: cir2 $times ease-in-out 0s infinite;
+
+    @at-root {
+        /* 动画帧定义 */
+        @keyframes cir2{
+            0%{
+                background-color: transparent;
+            }
+            40% {
+                background-color: transparent;
+            }
+            50%{
+                background-color: white;
+            }
+            90% {
+                background-color: white;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.bg button.blue {
+    -webkit-animation: blue $times ease-in-out 0s infinite;
+    -moz-animation: blue $times ease-in-out 0s infinite;
+    -ms-animation: blue $times ease-in-out 0s infinite;
+    animation: blue $times ease-in-out 0s infinite;
+
+    @at-root {
+        /* 动画帧定义 */
+        @keyframes blue{
+            0%{
+                background-color: $colorBlue;
+            }
+            45% {
+                background-color: $colorBlue;
+            }
+            50%{
+                background-color: rgba(255, 90, 1, 1);
+            }
+            95% {
+                background-color: rgba(255, 90, 1, 1);
+            }
+            100% {
+                background-color: $colorBlue;
+            }
+        }
+    }
+}
+
+.am-slide {
+    width: 100%;
+    height: 80vh;
+    min-height: 600px;
+    max-height: 860px;
+
+    background:transparent url("../img/am1.jpg") center center no-repeat;
+    background:transparent url("../img/am2.jpg") center center no-repeat;
+    /**/
+    -webkit-transition: height 2s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out;
+    -ms-transition: height 0.3s ease-in-out;
+    -o-transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out;
+    /**/
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+    transform: rotateZ(0);
+    /**/
+    -webkit-animation: slide $times ease-in-out 0s infinite;
+    -moz-animation: slide $times ease-in-out 0s infinite;
+    -ms-animation: slide $times ease-in-out 0s infinite;
+    animation: slide $times ease-in-out 0s infinite;
+
+    @at-root {
+        /* 动画帧定义 */
+        @keyframes slide{
+            0%{
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            40% {
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            50%{
+                background: transparent url("../img/am2.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            90% {
+                background: transparent url("../img/am2.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            100% {
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+

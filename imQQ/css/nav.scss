@@ -1,0 +1,178 @@
+
+$colorBlue: #12b7f5;
+
+
+html, body {
+    font: normal 15px "microsoft yahei", arial;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1200px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+a {
+    font: 15px "microsoft yahei";
+    text-decoration: none;
+    color: #444;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+ul {
+    font: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: block;
+        float: left;
+        margin: 0;
+    }
+}
+
+.header {
+    font: inherit;
+    margin: 0;
+    padding: 0 0 20px;
+
+    nav {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        z-index: 5;
+    }
+
+    .imqq {
+        background: white url("../img/imqq.png") center top no-repeat;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        padding-top: 280px;
+    }
+
+}
+
+.nav {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 100px;
+
+    .logo {
+        margin: 6px 10px !important;
+        padding: 10px;
+        display: inline;
+        background-color: transparent !important;
+    }
+
+    .menu {
+        width: 500px;
+
+        .menu-list {
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            clear: both;
+
+            li {
+                text-align: center;
+                margin: 0 10px;
+
+                -webkit-transition: all 0.1s linear;
+                -moz-transition: all 0.1s linear;
+                -ms-transition: all 0.1s linear;
+                -o-transition: all 0.1s linear;
+                transition: all 0.1s linear;
+            }
+
+            li:nth-child(n + 2) {
+                height: 100%;
+                width: 80px;
+                line-height: 80px;
+
+                a {
+                    padding: 28px 16px;
+                    font-size: 18px;
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: $colorBlue;
+                }
+            }
+
+            .active {
+                background-color: $colorBlue;
+            }
+
+            &:hover { /* 父元素影响子元素 */
+                li {
+                    background-color: transparent;
+                }
+                li:hover {
+                    background-color: $colorBlue;
+                }
+            }
+        }
+    }
+
+
+    .other {
+        color: white;
+
+        a {
+            color: white;
+        }
+
+        .other-box {
+            padding: 15px;
+
+            ul {
+                li:last-of-type {
+                    margin: 3px 0 0 15px;
+
+                    a {
+                        margin: 0 15px 0 0;
+
+                        &:hover {
+                            color: $colorBlue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sign-in {
+            cursor: pointer;
+            font: inherit;
+            background-color: $colorBlue;
+            border: none;
+            border-radius: 40px;
+            padding: 0.5em 1.8em;
+            color: white;
+            font-size: 17px;
+            outline: none;
+            margin: 5px 10px;
+            &:hover {
+                background-color: #12bcf5;
+            }
+        }
+
+        .number {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    }
+}
