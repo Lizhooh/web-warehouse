@@ -14,8 +14,8 @@
   cursor: pointer;
 }
 .bg button.blue {
-  left: 22%;
-  bottom: 15%;
+  left: 25%;
+  bottom: 13%;
   background-color: #12b7f5;
   padding: 0.5em 10vh;
 }
@@ -123,9 +123,9 @@
 }
 .am-slide {
   width: 100%;
-  height: 80vh;
-  min-height: 600px;
-  max-height: 860px;
+  height: 75vh;
+  min-height: 645px;
+  max-height: 900px;
   background: transparent url("../img/am1.jpg") center center no-repeat;
   background: transparent url("../img/am2.jpg") center center no-repeat;
   background-size: cover;
