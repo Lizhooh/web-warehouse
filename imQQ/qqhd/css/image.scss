@@ -1,0 +1,23 @@
+
+/**
+ *
+ */
+$cl-bg: 'qqipad-c-large-bg';
+
+%clBg {
+    position: absolute;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    background-size: cover;
+}
+
+@for $i from 1 to 4 {
+    .cl-bg#{$i} {
+        background: transparent url("../img/#{$cl-bg}#{$i}.png") center center no-repeat;
+        @extend %clBg;
+    }
+
+}

@@ -1,0 +1,28 @@
+/**
+ *
+ */
+.cl-bg1, .cl-bg2, .cl-bg3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+}
+
+.cl-bg1 {
+  background: transparent url("../img/qqipad-c-large-bg1.png") center center no-repeat;
+}
+
+.cl-bg2 {
+  background: transparent url("../img/qqipad-c-large-bg2.png") center center no-repeat;
+}
+
+.cl-bg3 {
+  background: transparent url("../img/qqipad-c-large-bg3.png") center center no-repeat;
+}
+
+/*# sourceMappingURL=image.css.map */
