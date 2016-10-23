@@ -15,21 +15,13 @@ $colorBlue: #12b7f5;
         z-index: 5;
     }
 
-    .imqq {
-        background: white url("../img/imqq.png") center top no-repeat;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-        padding-top: 280px;
-    }
-
 }
 
 .nav {
     margin: 0 auto;
     width: 100%;
     max-width: $all-width;
-    height: 100px;
+    color: white;
 
     .logo {
         margin: 6px 10px !important;
@@ -51,11 +43,11 @@ $colorBlue: #12b7f5;
                 text-align: center;
                 margin: 0 10px;
 
-                -webkit-transition: all 0.1s linear;
-                -moz-transition: all 0.1s linear;
-                -ms-transition: all 0.1s linear;
-                -o-transition: all 0.1s linear;
-                transition: all 0.1s linear;
+//              -webkit-transition: all 0.1s linear;
+//              -moz-transition: all 0.1s linear;
+//              -ms-transition: all 0.1s linear;
+//              -o-transition: all 0.1s linear;
+//              transition: all 0.1s linear;
             }
 
             li:nth-child(n + 2) {
@@ -66,7 +58,7 @@ $colorBlue: #12b7f5;
                 a {
                     padding: 25px 16px;
                     font-size: 18px;
-                    color: white;
+                    color: inherit;
                 }
 
                 &:hover {
@@ -74,9 +66,27 @@ $colorBlue: #12b7f5;
                 }
             }
 
+            li.other-color {
+                color: #333;
+                background-color: white;
+
+                a:hover {
+                    color: $colorBlue;
+                }
+
+                &:hover {
+                    background-color: white !important;
+                }
+
+                &.active {
+                    color: $colorBlue;
+                }
+            }
+
             .active {
                 background-color: $colorBlue;
             }
+
 
             &:hover { /* 父元素影响子元素 */
                 li {
@@ -86,15 +96,26 @@ $colorBlue: #12b7f5;
                     background-color: $colorBlue;
                 }
             }
+
+            &.other-color:hover {
+
+                li {
+                    color: #333 !important;
+                }
+
+                li:hover {
+                    color: $colorBlue !important;
+                }
+            }
         }
     }
 
 
     .other {
-        color: white;
+        color: inherit;
 
         a {
-            color: white;
+            color: inherit;
         }
 
         .other-box {

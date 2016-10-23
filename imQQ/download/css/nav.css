@@ -2,7 +2,7 @@
 .header {
   font: inherit;
   margin: 0;
-  padding: 0 0;
+  padding: 0 0 20px;
 }
 .header nav {
   position: absolute;
@@ -13,19 +13,12 @@
   background-color: transparent;
   z-index: 5;
 }
-.header .imqq {
-  background: white url("../img/imqq.png") center top no-repeat;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  padding-top: 280px;
-}
 
 .nav {
   margin: 0 auto;
   width: 100%;
   max-width: 1000px;
-  height: 100px;
+  color: white;
 }
 .nav .logo {
   margin: 6px 10px !important;
@@ -45,11 +38,6 @@
 .nav .menu .menu-list li {
   text-align: center;
   margin: 0 10px;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  transition: all 0.1s linear;
 }
 .nav .menu .menu-list li:nth-child(n + 2) {
   height: 75px;
@@ -59,10 +47,23 @@
 .nav .menu .menu-list li:nth-child(n + 2) a {
   padding: 25px 16px;
   font-size: 18px;
-  color: white;
+  color: inherit;
 }
 .nav .menu .menu-list li:nth-child(n + 2):hover {
   background-color: #12b7f5;
+}
+.nav .menu .menu-list li.other-color {
+  color: #333;
+  background-color: white;
+}
+.nav .menu .menu-list li.other-color a:hover {
+  color: #12b7f5;
+}
+.nav .menu .menu-list li.other-color:hover {
+  background-color: white !important;
+}
+.nav .menu .menu-list li.other-color.active {
+  color: #12b7f5;
 }
 .nav .menu .menu-list .active {
   background-color: #12b7f5;
@@ -76,11 +77,17 @@
 .nav .menu .menu-list:hover li:hover {
   background-color: #12b7f5;
 }
+.nav .menu .menu-list.other-color:hover li {
+  color: #333 !important;
+}
+.nav .menu .menu-list.other-color:hover li:hover {
+  color: #12b7f5 !important;
+}
 .nav .other {
-  color: white;
+  color: inherit;
 }
 .nav .other a {
-  color: white;
+  color: inherit;
 }
 .nav .other .other-box {
   padding: 15px;

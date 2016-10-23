@@ -9,3 +9,4 @@ web-warehouse | web 项目仓库 | private
 ##### ZhiHu-Sign: 仿知乎登录页面
 ##### sogou: 仿搜狗搜索页面
 ##### imQQ: 仿 I'm QQ
+##### NavShrink: jquery 导航收缩插件
