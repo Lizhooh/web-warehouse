@@ -2,10 +2,10 @@
 
 $(function(){
 
-    $('#page').fullpage({
-
-
-    });
+//  $('#page').fullpage({
+//
+//
+//  });
 
 
 });

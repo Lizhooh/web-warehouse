@@ -1,7 +1,55 @@
+$all-width: 1000px;
+$colorBlue: #12b7f5;
 
 .main {
-    width: 100%;
     height: 100%;
     padding: 0;
+    width: $all-width;
     margin: 0;
+    margin: 0 auto;
+
+
+    #page {
+
+        .img-list {
+            text-align: center;
+
+            p {
+                font-weight: 0;
+                color: #666;
+                margin: 0;
+                text-align: center;
+            }
+
+            p:first-of-type {
+                font-size: 52px;
+            }
+
+            p:last-of-type {
+                font-size: 40px;
+            }
+
+            a {
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                margin: 20px 0;
+                background-color: $colorBlue;
+                color: white;
+                padding: 0.8em 4em;
+                border-radius: 30px;
+
+                &:hover {
+                    background-color: #12cfF5;
+                    color: white;
+                }
+            }
+
+            span:last-child {
+                color: #aaa;
+                font-size: 18px;
+            }
+
+        }
+    }
 }

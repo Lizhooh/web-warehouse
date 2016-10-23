@@ -1,10 +1,11 @@
 $colorBlue: #12b7f5;
 
 html, body {
-    font: normal 15px Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;;
+    font: normal 15px Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
     box-sizing: border-box;
     width: 100%;
-    min-width: 1200px;
+    height: 100%;
+    min-width: 1200px !important;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -54,3 +55,28 @@ select {
     text-transform: none;
 }
 
+article,
+aside,
+details, /* 1 */
+figcaption,
+figure,
+footer,
+header,
+main, /* 2 */
+menu,
+nav,
+section,
+summary { /* 1 */
+    display: block;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+}
