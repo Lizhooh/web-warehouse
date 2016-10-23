@@ -1,0 +1,57 @@
+$all-width: 1000px;
+$colorBlue: #12b7f5;
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid #ddd;
+
+    > nav {
+        margin: 0 auto;
+        width: $all-width;
+        height: 75px;
+
+        .logo {
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .home {
+            box-sizing: border-box;
+            height: 100%;
+            background-color: $colorBlue;
+            color: white;
+            margin-left: 100px;
+
+            a {
+                color: inherit;
+                padding: 30px 20px;
+                line-height: 75px;
+            }
+        }
+
+        .pad, .mac {
+
+            span:last-of-type {
+                display: inline-block;
+                padding: 5px 5px;
+                margin: 17px 20px 0 0;
+                text-align: center;
+                line-height: 30px;
+
+            }
+
+            a {
+                color: #666;
+
+                &:hover {
+                    color: #666;
+                }
+            }
+        }
+    }
+}
