@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.28);
   border-bottom: 1px solid #ddd;
 }
 .header > nav {

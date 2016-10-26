@@ -1,26 +1,29 @@
 .main {
+  position: relative;
   height: 100%;
   padding: 0;
   width: 1000px;
-  margin: 0;
   margin: 0 auto;
 }
-.main #page .img-list {
+.main #page .section {
+  position: relative;
+}
+.main #page .img-list-1 {
   text-align: center;
 }
-.main #page .img-list p {
+.main #page .img-list-1 p {
   font-weight: 0;
   color: #666;
   margin: 0;
   text-align: center;
 }
-.main #page .img-list p:first-of-type {
+.main #page .img-list-1 p:first-of-type {
   font-size: 52px;
 }
-.main #page .img-list p:last-of-type {
+.main #page .img-list-1 p:last-of-type {
   font-size: 40px;
 }
-.main #page .img-list a {
+.main #page .img-list-1 a {
   display: block;
   text-align: center;
   font-size: 20px;
@@ -30,11 +33,11 @@
   padding: 0.8em 4em;
   border-radius: 30px;
 }
-.main #page .img-list a:hover {
+.main #page .img-list-1 a:hover {
   background-color: #12cfF5;
   color: white;
 }
-.main #page .img-list span:last-child {
+.main #page .img-list-1 span:last-child {
   color: #aaa;
   font-size: 18px;
 }
