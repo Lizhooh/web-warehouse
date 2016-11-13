@@ -9,10 +9,10 @@ html, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: white;
     color: #666;
-
+    min-height: 600px;
 }
 
 a {
@@ -66,6 +66,8 @@ a.red:hover {
     height: 50px;
     background-color: transparent;
     color: #555;
+    position: relative;
+    z-index: 5;
 
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);

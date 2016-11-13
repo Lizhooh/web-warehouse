@@ -1,5 +1,6 @@
 @charset "UTF-8";
-html, body {
+html,
+body {
     font: normal 15px "microsoft yahei", "arial, helvetica, sans-serif";
     position: relative;
     width: 100%;
@@ -7,9 +8,10 @@ html, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: white;
     color: #666;
+    min-height: 600px;
 }
 
 a {
@@ -23,7 +25,9 @@ a.red:hover {
     color: rgba(255, 0, 0, 0.8) !important;
 }
 
-.nav-left .more, .nav-right li:first-of-type .tianqi, .nav-right li:last-of-type .menu {
+.nav-left .more,
+.nav-right li:first-of-type .tianqi,
+.nav-right li:last-of-type .menu {
     /* 淡淡的阴影 */
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -64,6 +68,8 @@ a.red:hover {
     height: 50px;
     background-color: transparent;
     color: #555;
+    position: relative;
+    z-index: 5;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);

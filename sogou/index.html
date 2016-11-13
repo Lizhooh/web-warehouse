@@ -7,6 +7,7 @@
 
     <title>搜狗搜索</title>
 
+    <!-- 小logo -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
     <!-- 导航部分 -->
@@ -63,7 +64,7 @@
                         <div class="tianqi">
                             <header>
                                 <div class="top">
-                                    <span class="time">10月20日 （周四）</span>
+                                    <span class="time">11月20日 （周四）</span>
                                     <a class="red" href="" style="color: #aaa; float: right;">未来一周天气</a>
                                 </div>
 
@@ -255,21 +256,23 @@
             };
 
             var list   = $$('.list#newList li.item'),
-                search = $$("input[name=search] + label.search")[0];
+                search = $$("input[name=search] + label.search")[0],
+                sinput = $$("input[name=search]")[0];
+
 
             list.forEach(function(item, index, list) {
-                item.onclick = function(event) {
-                    var text = item.children[1].innerText;
+                item.onclick = (function(event) {
 
-                    $$("input[name=search]")[0].value = text;
-                }
+                    sinput.value = item.children[1].innerText;
+                }).bind(item);
             });
 
             search.onclick = function(event) {
-                var value = $$("input[name=search]")[0].value;
+                var value = sinput.value;
 
                 if(!value) return;
 
+                // 重定向
                 location.href = 'https://www.sogou.com/web?ie=utf8&query=' + value;
             };
 

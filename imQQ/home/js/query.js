@@ -29,6 +29,9 @@
             return key;
         };
 
+    /**
+     * 辅助函数
+     */
     Array.prototype.get = function(index) {
         return this[index];
     };

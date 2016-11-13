@@ -1,65 +1,75 @@
 footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
+
 footer p {
-  margin: 4px auto;
+    margin: 4px auto;
 }
+
 footer a {
-  font-size: 13px;
+    font-size: 13px;
 }
+
 footer p:first-of-type a {
-  margin: 0 5px;
+    margin: 0 5px;
 }
+
 footer p:last-of-type {
-  color: #bbb;
+    color: #bbb;
 }
+
 footer p:last-of-type a:hover {
-  color: #888;
+    color: #888;
 }
+
 footer .qrcode-box {
-  position: absolute;
-  right: 30px;
-  bottom: 50px;
-  width: 46px;
-  height: 74px;
-  background: url("../img/btn_card.png") 0 0 no-repeat;
+    position: absolute;
+    right: 30px;
+    bottom: 50px;
+    width: 46px;
+    height: 74px;
+    background: url("../img/btn_card.png") 0 0 no-repeat;
 }
+
 footer .qrcode-box:hover {
-  background: url("../img/btn_card.png") 0 -74px no-repeat;
+    background: url("../img/btn_card.png") 0 -74px no-repeat;
 }
+
 footer .qrcode-box .qrcode {
-  position: absolute;
-  right: 20px;
-  top: -5px;
-  width: 85px;
-  height: 85px;
-  background: url("../img/ico_erwm.png") 0 0 no-repeat;
-  background-size: cover;
-  /* */
-  -webkit-transform: scale(0) translateX(0);
-  -moz-transform: scale(0) translateX(0);
-  -ms-transform: scale(0) translateX(0);
-  -o-transform: scale(0) translateX(0);
-  transform: scale(0) translateX(0);
-  /* */
-  -webkit-transition: transform 0.3s ease-in-out;
-  -moz-transition: transform 0.3s ease-in-out;
-  -ms-transition: transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    width: 85px;
+    height: 85px;
+    background: url("../img/ico_erwm.png") 0 0 no-repeat;
+    background-size: cover;
+    /* */
+    -webkit-transform: scale(0) translateX(0);
+    -moz-transform: scale(0) translateX(0);
+    -ms-transform: scale(0) translateX(0);
+    -o-transform: scale(0) translateX(0);
+    transform: scale(0) translateX(0);
+    /* */
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
+
 footer .qrcode-box:hover > .qrcode {
-  -webkit-transform: scale(1) translateX(-50%);
-  -moz-transform: scale(1) translateX(-50%);
-  -ms-transform: scale(1) translateX(-50%);
-  -o-transform: scale(1) translateX(-50%);
-  transform: scale(1) translateX(-50%);
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%);
 }
+
 
 /*# sourceMappingURL=footer.css.map */
