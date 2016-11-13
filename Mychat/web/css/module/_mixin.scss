@@ -1,0 +1,43 @@
+
+%boxSizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@mixin box-shadow($value...) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin linear-gradient($value...) {
+    background: -webkit-linear-gradient($value);
+    background:    -moz-linear-gradient($value);
+    background:     -ms-linear-gradient($value);
+    background:      -o-linear-gradient($value);
+    background:         linear-gradient($value);
+}
+
+@mixin transition($value...) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin transform($value...) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+
+@mixin animation($value...) {
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    -ms-animation: $value;;
+    animation: $value;
+}

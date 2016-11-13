@@ -1,0 +1,18 @@
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+
+}
+
+/**
+ * 防止加载闪烁出现  {{ }}
+ */
+[v-cloak] {
+    opacity: 0;
+}

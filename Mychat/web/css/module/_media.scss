@@ -1,0 +1,86 @@
+
+@media screen and (max-width: 768px) {
+    body {
+        height: 100%;
+    }
+
+    .app {
+        width: 100%;
+        height: 100%;
+
+        .chat {
+            width: calc(100% - 240px);
+        }
+
+        .list {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        height: 100%;
+    }
+
+    .header {
+        height: 40px;
+        margin: 0 0 10px;
+    }
+
+    .main {
+        width: 100%;
+        height: calc(100% - 40px - 4px - 10px);
+        padding: 0;
+        margin: 0;
+    }
+
+    .begin {
+        width: 240px;
+        height: 480px;
+
+        > .login > header {
+            width: 240px;
+            height: 240px;
+
+            .pro {
+                margin: 50px auto 10px;
+            }
+        }
+    }
+
+    .app {
+        height: calc(100% + 10px);
+        width: 100%;
+        padding: 0;
+        margin: -10px 0 0;
+
+        .user {
+            display: none;
+        }
+
+        .chat {
+            margin: 0;
+            width: 100%;
+            box-shadow:  0 0 0 transparent;
+
+            .ok {
+                width: 40%;
+            }
+
+            .clear {
+                width: 40%;
+            }
+        }
+
+        .list {
+            display: none;
+        }
+    }
+
+    .footer {
+        display: none;
+    }
+}
+
+
