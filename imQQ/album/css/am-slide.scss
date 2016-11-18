@@ -49,6 +49,25 @@ $times: 15s;
                 background: transparent url("../img/alb_bn.jpg") top center no-repeat;
             }
         }
+
+        @-webkit-keyframes slide{
+            0%{
+                background: transparent url("../img/alb_bn.jpg") top center no-repeat;
+            }
+            40% {
+                background: transparent url("../img/alb_bn.jpg") top center no-repeat;
+            }
+            50%{
+                background: transparent url("../img/news_banner.jpg") top center no-repeat;
+            }
+            90% {
+                background: transparent url("../img/news_banner.jpg") top center no-repeat;
+            }
+            100% {
+                background: transparent url("../img/alb_bn.jpg") top center no-repeat;
+            }
+        }
+
     }
 }
 

@@ -6,10 +6,11 @@
  */
 (function(){
 
-    /**
-     * 选择器
-     */
-    var $$ = function(select, content) {
+    var
+        /**
+         * 选择器
+         */
+        $$ = function(select, content) {
             content = content || document;
 
             return Array.prototype.slice.call(
@@ -17,11 +18,15 @@
             );
         },
 
+        /**
+         * 设置属性名
+         */
         setKey = function(key) {
             var keyarr = key.split('-');
 
             key = keyarr[0];
             for(var j = 1; j < keyarr.length; j++) {
+
                key += keyarr[j][0].toUpperCase() + keyarr[j].substr(1);
             }
 
@@ -45,7 +50,8 @@
     Element.prototype.css = function(attr) {
         var self = this;
 
-        if(typeof attr !== 'object') throw new Error(attr + ' is not object.');
+        if(typeof attr !== 'object')
+            throw new Error(attr + ' is not object.');
 
         for(var key in attr) {
             var keys = setKey(key);
@@ -85,6 +91,7 @@
         klass = (this.getAttribute('class') || '').split(' ');
 
         index = klass.indexOf(name);
+
         if(index != -1) {
             klass.splice(index, 1);
         }
@@ -113,5 +120,6 @@
     };
 
     window.$$ = $$;
+
 })(document, undefined);
 

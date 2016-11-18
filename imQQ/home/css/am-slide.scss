@@ -80,6 +80,24 @@ $times: 15s;
                 background-color: white;
             }
         }
+
+        @-webkit-keyframes cir1 {
+            0%{
+                background-color: white;
+            }
+            40% {
+                background-color: white;
+            }
+            50%{
+                background-color:  transparent;
+            }
+            90% {
+                background-color:  transparent;
+            }
+            100% {
+                background-color: white;
+            }
+        }
     }
 }
 
@@ -94,6 +112,23 @@ $times: 15s;
     @at-root {
         /* 动画帧定义 */
         @keyframes cir2{
+            0%{
+                background-color: transparent;
+            }
+            40% {
+                background-color: transparent;
+            }
+            50%{
+                background-color: white;
+            }
+            90% {
+                background-color: white;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+        @-webkit-keyframes cir2 {
             0%{
                 background-color: transparent;
             }
@@ -138,6 +173,23 @@ $times: 15s;
                 background-color: $colorBlue;
             }
         }
+        @-webkit-keyframes blue{
+            0%{
+                background-color: $colorBlue;
+            }
+            45% {
+                background-color: $colorBlue;
+            }
+            50%{
+                background-color: rgba(255, 90, 1, 1);
+            }
+            95% {
+                background-color: rgba(255, 90, 1, 1);
+            }
+            100% {
+                background-color: $colorBlue;
+            }
+        }
     }
 }
 
@@ -145,7 +197,7 @@ $times: 15s;
     width: 100%;
     height: 75vh;
     min-height: 645px;
-    max-height: 900px;
+    max-height: 800px;
 
     background:transparent url("../img/am1.jpg") center center no-repeat;
     background:transparent url("../img/am2.jpg") center center no-repeat;
@@ -171,6 +223,29 @@ $times: 15s;
     @at-root {
         /* 动画帧定义 */
         @keyframes slide{
+            0%{
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            40% {
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            50%{
+                background: transparent url("../img/am2.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            90% {
+                background: transparent url("../img/am2.jpg") center center no-repeat;
+                background-size: cover;
+            }
+            100% {
+                background: transparent url("../img/am1.jpg") center center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        @-webkit-keyframes slide{
             0%{
                 background: transparent url("../img/am1.jpg") center center no-repeat;
                 background-size: cover;

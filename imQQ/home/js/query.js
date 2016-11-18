@@ -6,10 +6,11 @@
  */
 (function(){
 
-    /**
-     * 选择器
-     */
-    var $$ = function(select, content) {
+    var
+        /**
+         * 选择器
+         */
+        $$ = function(select, content) {
             content = content || document;
 
             return Array.prototype.slice.call(
@@ -17,6 +18,9 @@
             );
         },
 
+        /**
+         * 设置属性名
+         */
         setKey = function(key) {
             var keyarr = key.split('-');
 
@@ -87,6 +91,7 @@
         klass = (this.getAttribute('class') || '').split(' ');
 
         index = klass.indexOf(name);
+
         if(index != -1) {
             klass.splice(index, 1);
         }
@@ -115,5 +120,6 @@
     };
 
     window.$$ = $$;
+
 })(document, undefined);
 

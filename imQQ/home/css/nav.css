@@ -121,4 +121,41 @@
   font-size: 14px;
 }
 
+.header.scroll {
+  /* 滚动条滚到下面的状态 */
+}
+.header.scroll nav {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+}
+.header.scroll .nav {
+  color: #222;
+}
+.header.scroll .nav .menu .menu-list li {
+  color: #333;
+  background-color: white;
+}
+.header.scroll .nav .menu .menu-list li a:hover {
+  color: #12b7f5;
+}
+.header.scroll .nav .menu .menu-list li:hover {
+  background-color: white !important;
+}
+.header.scroll .nav .menu .menu-list li.active {
+  color: #12b7f5;
+}
+.header.scroll .nav .menu .menu-list .active {
+  background-color: white;
+}
+.header.scroll .nav .menu .menu-list:hover {
+  /* 父元素影响子元素 */
+}
+.header.scroll .nav .menu .menu-list:hover li {
+  color: #333 !important;
+}
+.header.scroll .nav .menu .menu-list:hover li:hover {
+  color: #12b7f5 !important;
+}
+
 /*# sourceMappingURL=nav.css.map */

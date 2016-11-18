@@ -10,20 +10,11 @@
                     .offset()
                     .top,
 
-        nav   = $$('header.header > nav')
+        header= $$('header.header')
                     .get(0),
 
-        navch = $$('.nav', nav)
-                    .get(0),
-
-        logo  = $$('.logo > a > img', nav)
-                    .get(0),
-
-        menu  = $$('.menu-list', nav)
-                    .get(0),
-
-        list  = $$('.menu-list > li', nav)
-                    .all();
+        logo  = $$('.logo > a > img', header)
+                    .get(0);
 
 
     document.onscroll = function(event) {
@@ -31,34 +22,14 @@
         var scrollTop = this.documentElement.scrollTop || this.body.scrollTop;
 
         if(scrollTop > start + 100) {
-            nav.css({
-                'position': 'fixed',
-                'background-color': 'white',
-                'border-bottom': '1px solid #ddd'
-            });
-
-            navch.css({'color': '#222'});
+            // 更新状态
+            header.addClass('scroll');
             logo.src = 'img/imlogo_b.png';
-            menu.addClass('other-color');
-
-            list.forEach(function(item, index, list) {
-                item.addClass('other-color');
-            });
         }
         else {
-            nav.css({
-                'position': '',
-                'background-color': '',
-                'border-bottom': ''
-            });
-
-            navch.css({'color': 'white'});
+            // 还原状态
+            header.removeClass('scroll');
             logo.src = 'img/imlogo.png';
-            menu.removeClass('other-color');
-
-            list.forEach(function(item, index, list) {
-                item.removeClass('other-color');
-            });
         }
     };
 
