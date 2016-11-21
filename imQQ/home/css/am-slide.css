@@ -200,26 +200,26 @@
 }
 /* 动画帧定义 */
 @keyframes slide {
-  0% {
-    background: transparent url("../img/am1.jpg") center center no-repeat;
-    background-size: cover;
-  }
-  40% {
-    background: transparent url("../img/am1.jpg") center center no-repeat;
-    background-size: cover;
-  }
-  50% {
-    background: transparent url("../img/am2.jpg") center center no-repeat;
-    background-size: cover;
-  }
-  90% {
-    background: transparent url("../img/am2.jpg") center center no-repeat;
-    background-size: cover;
-  }
-  100% {
-    background: transparent url("../img/am1.jpg") center center no-repeat;
-    background-size: cover;
-  }
+    0% {
+        background: transparent url("../img/am1.jpg") center center no-repeat;
+        background-size: cover;
+    }
+    40% {
+        background: transparent url("../img/am1.jpg") center center no-repeat;
+        background-size: cover;
+    }
+    50% {
+        background: transparent url("../img/am2.jpg") center center no-repeat;
+        background-size: cover;
+    }
+    90% {
+        background: transparent url("../img/am2.jpg") center center no-repeat;
+        background-size: cover;
+    }
+    100% {
+        background: transparent url("../img/am1.jpg") center center no-repeat;
+        background-size: cover;
+    }
 }
 @-webkit-keyframes slide {
   0% {
