@@ -1,9 +1,0 @@
-{
-    "name"      : "即时聊天应用",
-    "version"   : "0.0.1",
-    "author"    : {
-        "name"  : "lizhooh"
-    },
-    "main"      : "main.js",
-    "license"   : "ISC"
-}
