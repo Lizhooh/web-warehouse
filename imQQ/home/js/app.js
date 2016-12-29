@@ -16,7 +16,6 @@
         logo  = $$('.logo > a > img', header)
                     .get(0);
 
-
     document.onscroll = function(event) {
         // 获取滚动条-顶端位置
         var scrollTop = this.documentElement.scrollTop || this.body.scrollTop;
